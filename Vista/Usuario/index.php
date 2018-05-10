@@ -117,7 +117,7 @@ session_start();
   <script type="text/javascript" src="../asset/js/materialize.min.js"></script>
   <!--  script funciones index -->
   <script  src="../asset/js/index.js"></script>
-<h2>Hola mundo</h2>
+
 
 </body>
 </html>
