@@ -29,7 +29,7 @@
         <ul id="" class="hide-on-med-and-down right">
           <!-- <li><a href="carrito/index.php" id="BotonCarrito" title="Ver Carrito de Compras"><img height="50px" src="img/carrito.png"></a></li> -->
 <li><a class="dropdown-trigger" href="#!" data-target="dropdown1" id="BotonLogin" ><?php  echo $_SESSION["usuario"]["correo"];?><i class="material-icons right" style="color:rgb(73, 243, 244)">arrow_drop_down</i></a></li>
-
+<li><a href="#" id="BotonCarrito" title="Ver Carrito de Compras"><img height="55px" id="logocarro" src="../asset/img/carrito.png"></a></li>
         </ul>
       </ul>
       <!-- <ul class="side-nav" id="mobile-demo">
