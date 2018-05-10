@@ -1,0 +1,49 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+body {
+  background: #fff;
+}
+
+.input-field input[type=date]:focus ,
+.input-field input[type=text]:focus ,
+.input-field input[type=email]:focus ,
+.input-field input[type=password]:focus  {
+  color: #cc00e6;
+}
+
+.input-field input[type=date]:focus + label,
+.input-field input[type=text]:focus + label,
+.input-field input[type=email]:focus + label,
+.input-field input[type=password]:focus + label {
+  color: #e91e63;
+}
+.input-field input[type=date] + label,
+.input-field input[type=text] + label,
+.input-field input[type=email] + label,
+.input-field input[type=password] + label {
+  color: #cc00e6;
+}
+
+.input-field input[type=date],
+.input-field input[type=text],
+.input-field input[type=email],
+.input-field input[type=password] {
+  border-bottom: 2px solid #cc00e6;
+  box-shadow: none;
+}
+
+.input-field input[type=date]:focus,
+.input-field input[type=text]:focus,
+.input-field input[type=email]:focus,
+.input-field input[type=password]:focus {
+  border-bottom: 2px solid #e91e63;
+  box-shadow: none;
+}
