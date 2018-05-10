@@ -3,10 +3,10 @@
   require_once('../../Controlador/UsuarioControlador.php');
 
   session_start();
-  if (!isset($_SESSION['contadorLogin']) && !isset($_POST["email"])) {
+  // if (!isset($_SESSION['contadorLogin']) && !isset($_POST["email"])) {
   
-      $_SESSION['contadorLogin']=0;
-      }
+  //     $_SESSION['contadorLogin']=0;
+  //     }
 
 
    $usuC = $_POST["email"];
@@ -29,16 +29,16 @@ if($resultado_set)
   echo json_encode(array('error' => false , 'tipo' => $resultado_set['id_perfil']));
 }else{
 
-      $_SESSION['contadorLogin'] =  ++$_SESSION['contadorLogin'];
+      // $_SESSION['contadorLogin'] =  ++$_SESSION['contadorLogin'];
          // echo   $_SESSION['contadorLogin'];
         echo json_encode(array('error' => true ));
 }
   // code...
-  if($_SESSION['contadorLogin']>3){
-    // echo "bloqueo usuario";
-  $usuario = UsuarioControlador::bloqueartUsuarioC($v_usuario);
-// echo "asd";
-}
+//   if($_SESSION['contadorLogin']>3){
+//     // echo "bloqueo usuario";
+//   $usuario = UsuarioControlador::bloqueartUsuarioC($v_usuario);
+// // echo "asd";
+// }
 
 
 
