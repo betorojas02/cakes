@@ -43,11 +43,9 @@
       <div  class="col s12" >
         <div class="container" id="datos">
             <div class="row">
-
-
               <div class="col s12" >
                 <div class="center">
-                          <h2>L&B</h2>
+                    <h2>L&B</h2>
                 </div>
                 <div id="datosU" class="col s12" >
                   <h4 class="center">Datos</h4>
@@ -148,14 +146,24 @@
         </div>
 
       <?php  endforeach ?>
-
-
-        <div id="comprasU" class="col s12" >
-        <h4>Datos</h4>
-
-
+      <div  class="col s12" >
+        <div class="container" id="datos">
+            <div class="row">
+              <div class="col s12" >
+                <div class="center">
+                    <h2>L&B</h2>
+                </div>
+          
+                    <div id="comprasU" class="col s12" >
+                      <h4 class="center">Compras</h4>
+                      <div class="row">
+                      </div>
+                    </div>
+              </div>
+            </div>
         </div>
-
+      </div>
+        
 
     <!--  script jquery  -->
     <script type="text/javascript" src="../asset/js/jquery-3.3.1.min.js"></script>
