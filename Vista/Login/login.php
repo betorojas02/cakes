@@ -73,7 +73,7 @@ session_start();
           </form>
         </div>
       </div>
-      <a  class='pink-text' href="#!">Crear Cuenta</a>
+      <a  class='pink-text' href="../Usuario/registrar.php">Crear Cuenta</a>
       <br>
       <a  class='pink-text' href="restablecer.php">olvidaste tu contraseña ?</a>
     </center>
