@@ -68,6 +68,7 @@ nav a.brand-logo {
 }
 /* boton de add de card */
 .add-btn-flt {
+  margin-top: -15%;
   position: relative;
   float: right;
   top: -44px;
