@@ -19,6 +19,8 @@
       <link rel="stylesheet" type="text/css" href="../asset/dist/sweetalert.css">
   <link rel="stylesheet" href="../asset/css/index.css">
   <link rel="stylesheet" href="../asset/css/datosUsu.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+
     <title>L&B CAKES</title>
   </head>
   <body >
@@ -40,9 +42,6 @@
       <div id="datosU">
     
           <div class="row" id="datos">
-       
-
-
                       <div class="input-field col s6">
                         <input disabled id="Nombre" type="text" class="validate"   value="<?php echo $usua['nombre']; ?>">
                         <label >Nombre</label>
@@ -84,34 +83,58 @@
                               </ul>
                             </center>
                             
-            </div>
+        </div>
                           
-      </div>
+     
           
  <!-- fin de tab datosU -->
           <div id="comprasU">
           
             <div class="row" id="datos">
-        
-                   <div class="row">
+                
 
 
+            <table id="example" class="striped" cellspacing="0" width="100%" >
+              <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>precio</th>
+                    <th>cantidad</th>
+                    <th>precio total</th>
+                    <th>descuento </th>
+                    
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Alvin</td>
+                  <td>Eclair</td>
+                  <td>$0.87</td>
+                  <td>$0.87</td>
+                  <td>$0.87</td>
                   
-                  </div>
+                </tr>
               
+             
+              </tbody>
+            </table>
+
             </div>
               
           </div>
+  
+
+
   
    <!-- ciere row -->
    </div>
 
    <!-- cierra de container principal -->
 </div>
-                      
+                 
                       
          <div id="modal2" class="modal fixed-footer trans-card z-depth-4">
-          <div class="modal-content trans-card col s12">
+          <div class="modal-content trans-card col s12 ">
             <div class="row" style="padding:5%;overflow:hidden;">
               <form name="registrar" method="post" id="formE" action="" >
                 <br><label><h4>Editar Cuenta:</h4></label>
@@ -141,7 +164,7 @@
                     <i class="material-icons right">send</i>
                   </button>
                 </div>
-                <div class="modal-footer trans-card">
+                <div class="modal-footer trans-card ">
                     <a href="#!" class="modal-action modal-close waves-effect waves-blue btn-flat blue-text darken-2">Cerrar</a>
                  </div>
               </form>
@@ -150,6 +173,7 @@
 
         
         </div>
+
 
       <?php  endforeach ?>
             
@@ -164,6 +188,8 @@
     <!--  script funciones index -->
     <script  src="../asset/js/index.js"></script>
       <script type="text/javascript" src="../asset/js/registro.js"></script>
+      <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+
 
 
   </body>

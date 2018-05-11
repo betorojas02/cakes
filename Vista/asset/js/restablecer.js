@@ -14,11 +14,11 @@ $(document).on('submit', '#formR', function (event) {
 
 		if (!resp.error) {
 			swal({
-				title: "restabelcer",
-				text: "correo envio",
-				type: "success",
-				button: "cerrar",
-			},
+					title: "restabelcer",
+					text: "correo envio",
+					type: "success",
+					button: "cerrar",
+				},
 				function () {
 					window.location.href = '../Usuario/index.php';
 				});
