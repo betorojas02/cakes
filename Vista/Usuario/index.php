@@ -110,7 +110,6 @@ session_start();
             }
             ?>
 
-            <h2>hola mundo</h2>
   <!--  script jquery  -->
   <script type="text/javascript" src="../asset/js/jquery-3.3.1.min.js"></script>
     <!-- Compiled and minified JavaScript -->

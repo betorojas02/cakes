@@ -31,84 +31,92 @@
   <div class="container">
   <div class="row">
     <div class="col s12">
-  <main>
-    <div class="row">
-      <div class="col s12">
-        <ul class="tabs ">
-          <li class="tab col s3 "><a class="active" href="#datosU">Datos De Usuario</a></li>
-          <li class="tab col s3 "><a class="active" href="#comprasU">mis compras</a></li>
+          <ul class="tabs ">
+            <li class="tab col s4 "><a class="active" href="#datosU">Datos De Usuario</a></li>
+            <li class="tab col s4 "><a  href="#comprasU">mis compras</a></li>
+          </ul>
+    </div>
+    
+      <div id="datosU">
+    
+          <div class="row" id="datos">
+       
 
-        </ul>
-      </div>
-      <div  class="col s12" >
-        <div class="container" id="datos">
-            <div class="row">
-              <div class="col s12" >
-                <div class="center">
-                    <h2>L&B</h2>
-                </div>
-                <div id="datosU" class="col s12" >
-                  <h4 class="center">Datos</h4>
-                  <div class="row">
+
                       <div class="input-field col s6">
-                            <input disabled id="Nombre" type="text" class="validate"   value="<?php echo $usua['nombre']; ?>">
-                            <label >Nombre</label>
+                        <input disabled id="Nombre" type="text" class="validate"   value="<?php echo $usua['nombre']; ?>">
+                        <label >Nombre</label>
                       </div>
                       <div class="input-field col s6">
-                                <input disabled  type="text" class="validate"  value="<?php echo $usua['apellido']; ?>">
-                                <label >apellido</label>
+                        <input disabled  type="text" class="validate"  value="<?php echo $usua['apellido']; ?>">
+                        <label >apellido</label>
                       </div>
                       <div class="input-field col s6">
-                                <input disabled type="text" class="validate" value="<?php echo $usua['ciudad']; ?>">
-                                <label >ciudad</label>
+                        <input disabled type="text" class="validate" value="<?php echo $usua['ciudad']; ?>">
+                        <label >ciudad</label>
                       </div>
                       <div class="input-field col s6">
-                                <input disabled  type="text" class="validate" value="<?php echo $usua['direccion']; ?>">
-                                <label >direccion</label>
+                        <input disabled  type="text" class="validate" value="<?php echo $usua['direccion']; ?>">
+                        <label >direccion</label>
                       </div>
                       <div class="input-field col s6">
-                                <input disabled  type="text" class="validate" value="<?php echo $usua['telefono']; ?>">
-                                <label >telefono</label>
+                        <input disabled  type="text" class="validate" value="<?php echo $usua['telefono']; ?>">
+                        <label >telefono</label>
                       </div>
                       <div class="input-field col s6">
-                                <input disabled type="text" class="validate" value="<?php echo $usua['barrio']; ?>">
+                        <input disabled type="text" class="validate" value="<?php echo $usua['barrio']; ?>">
                                 <label >barrio</label>
                       </div>
                       <div class="input-field col s6">
-                                <input disabled type="text" class="validate" value="<?php echo $usua['cedula']; ?>">
-                                <label >cedula</label>
+                         <input disabled type="text" class="validate" value="<?php echo $usua['cedula']; ?>">
+                         <label >cedula</label>
                       </div>
-                      <div class="input-field col s6">
-                      <label> Fecha de nacimiento</label>
-                        <input disabled  type="text" class="datepicker" id="fecha" required value="<?php echo $usua['fecha_nacimiento']; ?>">
-
-                      </div>
-
-                </div>
-
-                            <ul class="hide-on-med-and-down ">
-                                <li><a  class="waves-effect waves-light btn modal-trigger pink darken-1" href="#modal2">editar </a></li>
-                            </ul>
-
-                  </div>
+                          <div class="input-field col s6">
+                          <label> Fecha de nacimiento</label>
+                          <input disabled  type="text" class="datepicker" id="fecha" required value="<?php echo $usua['fecha_nacimiento']; ?>">
+                        </div>
+                              
               </div>
+                            <center>
+
+                              <ul class="hide-on-med-and-down ">
+                                <li><a  class="waves-effect waves-light btn modal-trigger pink darken-1" href="#modal2">editar </a></li>
+                              </ul>
+                            </center>
+                            
             </div>
-          </div>
+                          
       </div>
+          
+ <!-- fin de tab datosU -->
+          <div id="comprasU">
+          
+            <div class="row" id="datos">
+        
+                   <div class="row">
 
-    </div>
-    </main>
+
+                  
+                  </div>
+              
+            </div>
+              
           </div>
-        </div>
-      </div>
+  
+   <!-- ciere row -->
+   </div>
 
-      <div id="modal2" class="modal fixed-footer trans-card z-depth-4">
-          <div class="modal-content trans-card col s4">
+   <!-- cierra de container principal -->
+</div>
+                      
+                      
+         <div id="modal2" class="modal fixed-footer trans-card z-depth-4">
+          <div class="modal-content trans-card col s12">
             <div class="row" style="padding:5%;overflow:hidden;">
               <form name="registrar" method="post" id="formE" action="" >
                 <br><label><h4>Editar Cuenta:</h4></label>
-                    <input disabled type="text" name="id_usuario" id="id_usuario"  style="display:none" required value="<?php echo $_SESSION["usuario"]["id_usuario"];?>  ">
-        
+                <input disabled type="text" name="id_usuario" id="id_usuario"  style="display:none" required value="<?php echo $_SESSION["usuario"]["id_usuario"];?>  ">
+                
                 <div class="input-field col s6 m6 l6">
                   <label>Ciudad</label>
                   <input  class="validate" type="text" name="ciudad" id="ciudad" pattern="[a-z]{1,15}" required value="<?php echo $usua['ciudad']; ?>" >
@@ -126,9 +134,6 @@
                   <label>Barrio</label>
                   <input  class="validate" type="text" name="barrio" id="barrio" required  value="<?php echo $usua['barrio']; ?>">
                 </div>
-    
-              
-  
 
                 <div class="center col s12 m12 l12">
                   <br>
@@ -136,35 +141,19 @@
                     <i class="material-icons right">send</i>
                   </button>
                 </div>
+                <div class="modal-footer trans-card">
+                    <a href="#!" class="modal-action modal-close waves-effect waves-blue btn-flat blue-text darken-2">Cerrar</a>
+                 </div>
               </form>
             </div>
           </div>
 
-          <div class="modal-footer trans-card">
-            <a href="#!" class="modal-action modal-close waves-effect waves-blue btn-flat blue-text darken-2">Cerrar</a>
-          </div>
+        
         </div>
 
       <?php  endforeach ?>
-      <div  class="col s12" >
-        <div class="container" id="datos">
-            <div class="row">
-              <div class="col s12" >
-                <div class="center">
-                    <h2>L&B</h2>
-                </div>
+            
           
-                    <div id="comprasU" class="col s12" >
-                      <h4 class="center">Compras</h4>
-                      <div class="row">
-                      </div>
-                    </div>
-              </div>
-            </div>
-        </div>
-      </div>
-        
-
     <!--  script jquery  -->
     <script type="text/javascript" src="../asset/js/jquery-3.3.1.min.js"></script>
       <!-- Compiled and minified JavaScript -->
