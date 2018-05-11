@@ -1,8 +1,10 @@
 <?php
-include '../../Datos/UsuarioDAO.php';
+require_once '../../Datos/UsuarioDAO.php';
 
 
     class UsuarioControlador {
+
+   
 
         public static function login ($correo, $clave)
         {

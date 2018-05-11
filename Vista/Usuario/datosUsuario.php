@@ -1,9 +1,11 @@
   <?php
-  include_once('../../Controlador/UsuarioControlador.php');
+   require_once "../../Controlador/UsuarioControlador.php";
+
   session_start( );
+
   $id =  $_SESSION["usuario"]["id_usuario"];
-  $usu = new UsuarioControlador();
-  $usuarios = $usu->usuLC($id);
+  // $usu = new UsuarioControlador();
+  $usuarios = UsuarioControlador::usuLC($id);
 
   ?>
   <!DOCTYPE html>
@@ -85,43 +87,18 @@
                             
         </div>
                           
-     
-          
- <!-- fin de tab datosU -->
-          <div id="comprasU">
-          
-            <div class="row" id="datos">
-                
+     <!-- fin de tab datosU -->
+     <div id="comprasU">
+         
+          <div class="row" id="datos">
+            <?php  include("miscompras.php") ?>
+        
 
-
-            <table id="example" class="striped" cellspacing="0" width="100%" >
-              <thead>
-                <tr>
-                    <th>Producto</th>
-                    <th>precio</th>
-                    <th>cantidad</th>
-                    <th>precio total</th>
-                    <th>descuento </th>
-                    
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Alvin</td>
-                  <td>Eclair</td>
-                  <td>$0.87</td>
-                  <td>$0.87</td>
-                  <td>$0.87</td>
-                  
-                </tr>
-              
-             
-              </tbody>
-            </table>
-
-            </div>
-              
           </div>
+            
+        </div>
+
+  
   
 
 

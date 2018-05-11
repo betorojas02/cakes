@@ -1,5 +1,5 @@
 <?php
-include '../../Datos/ProductoDAO.php';
+require_once '../../Datos/ProductoDAO.php';
 
 class ProductosController
 {

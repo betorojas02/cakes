@@ -1,10 +1,10 @@
 <?php
-  include 'Conexion.php';
+   require_once 'Conexion.php';
   include '../../Entidades/Usuario.php';
 
   Class UsuarioDAO extends Conexion
   {
-      protected static $cnx;
+      public static $cnx;
 
       private static function getConexion()
       {
@@ -52,6 +52,7 @@
                 }
           }
           return false;
+      
 
       }
 
@@ -97,7 +98,7 @@
 
 
           return $usuario;
-
+      
       }
 
       public static function addUsuarioM($nombre,$apellido,$correo,$clave,$ciudad,$telefono,$sexo,$cedula,$tipoP,$direccion,$fecha,$barrio,$estado)
@@ -121,7 +122,7 @@
                $resultado->bindParam(":barrio", $barrio);
                  $resultado->bindParam(":estado", $estado);
                 $resultado->execute();
-
+                $sql->close();
       }
 
       public static function editUsuarioM($id_usuario,$ciudad,$telefono,$direccion,$barrio){
@@ -135,6 +136,7 @@
             $resultado->bindParam(":telefono", $telefono);
             $resultado->bindParam(":barrio", $barrio);
             $resultado->execute();
+          
       }
 
 // funcion bloquear usuario
@@ -144,6 +146,7 @@
             $resultado = self::$cnx->prepare($sql);
             $resultado->bindParam(":correo", $v_usuario);
                $resultado->execute();
+               $sql->close();
       }
 // METODO DEL USUARIO LOGIADO
       public static function usuLM($id){
@@ -154,6 +157,8 @@
           $resultado->execute();
           return $resultado->fetchAll();
 
+       
+
       }
 
       public function usuarioRepetidoM($correo){
@@ -163,6 +168,7 @@
       $resultado->bindParam(":correo", $correo);
       $resultado->execute();
       return $resultado->rowCount();
+     
 
       }
       // correo a recuperar
@@ -173,6 +179,8 @@
         $resultado->bindParam(":correo", $correo);
         $resultado->execute();
         return $resultado->fetchColumn();
+
+    
       }
       // recupear clave
       public function cambioClaveM($id_usuario,$clave){
@@ -185,6 +193,7 @@
             $resultado->bindParam(":clave", $clave);
 
             $resultado->execute();
+
       }
 
 

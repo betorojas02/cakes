@@ -1,11 +1,11 @@
 <?php
-include 'Conexion.php';
+require_once 'Conexion.php';
 
 
 class ProductosModel extends Conexion
 {
 
-  protected static $cnx;
+  public static $cnx;
 
   private static function getConexion()
   {
@@ -27,6 +27,8 @@ class ProductosModel extends Conexion
          $resultado->execute();
          return $resultado->fetchAll();
 
+         $sql->desconectar();
+
     }
 
 
@@ -37,5 +39,6 @@ class ProductosModel extends Conexion
       $resultado = self::$cnx->prepare($sql);
       $resultado->execute();
       return $resultado->rowCount();
+      $sql->desconectar();
     }
   }
