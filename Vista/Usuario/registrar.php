@@ -124,6 +124,6 @@
   <script type="text/javascript" src="../asset/dist/sweetalert.min.js"></script>
   <!--  script funciones index -->
 	<script type="text/javascript" src="../asset/js/registro.js"></script>
-		<script type="text/javascript" src="../asset/js/registroUValidar.js"></script>
+	
 </body>
 </html>

@@ -5,8 +5,6 @@ $obj=new ProductosController();
 $productos=$obj->getProductosControllers();
 $totalP =$obj->ProductosC();
 session_start();
-
-
  ?>
 <!DOCTYPE html>
 <html lang="en">

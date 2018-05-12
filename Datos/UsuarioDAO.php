@@ -122,7 +122,7 @@
                $resultado->bindParam(":barrio", $barrio);
                  $resultado->bindParam(":estado", $estado);
                 $resultado->execute();
-                $sql->close();
+            
       }
 
       public static function editUsuarioM($id_usuario,$ciudad,$telefono,$direccion,$barrio){
