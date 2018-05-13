@@ -1,5 +1,6 @@
 <?php
 require_once ('../../Controlador/ProductoControlador.php');
+require_once "../../include/session.php"; 
 $postres = ProductosController::getPostresControllers();
 ?>
 

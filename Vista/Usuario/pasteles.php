@@ -1,6 +1,8 @@
 <?php
 require_once ('../../Controlador/ProductoControlador.php');
+require_once "../../include/session.php"; 
 $pasteles = ProductosController::getPastelesControllers();
+
 ?>
 
 <!DOCTYPE html>
