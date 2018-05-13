@@ -20,6 +20,15 @@ class ProductosController
         return $respuesta;
    
     }
+
+    public static function getPostresControllers()
+    {
+
+        $respuesta = ProductosModel::postresModel();
+        return $respuesta;
+   
+    }
+
     public static function ProductosC(){
         $respuesta = ProductosModel::ProductosM();
         return $respuesta;
