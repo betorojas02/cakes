@@ -52,6 +52,7 @@ $pasteles = ProductosController::getPastelesControllers();
 
 <?php endforeach ?>
 
+
     </div>
 </div>
   <!--  script jquery  -->
