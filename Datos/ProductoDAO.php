@@ -27,10 +27,24 @@ class ProductosModel extends Conexion
          $resultado->execute();
          return $resultado->fetchAll();
 
-         $sql->desconectar();
+     
 
     }
 
+    public static function pastelesModel()
+    {
+        $sql = "SELECT * FROM producto where id_tipo=1";
+
+         self::getConexion();
+         $resultado = self::$cnx->prepare($sql);
+         $resultado->execute();
+         return $resultado->fetchAll();
+
+    
+
+    }
+
+   
 
     public function ProductosM()
     {
@@ -39,6 +53,6 @@ class ProductosModel extends Conexion
       $resultado = self::$cnx->prepare($sql);
       $resultado->execute();
       return $resultado->rowCount();
-      $sql->desconectar();
+ 
     }
   }

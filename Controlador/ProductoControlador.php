@@ -13,6 +13,13 @@ class ProductosController
    
     }
 
+    public static function getPastelesControllers()
+    {
+
+        $respuesta = ProductosModel::pastelesModel();
+        return $respuesta;
+   
+    }
     public static function ProductosC(){
         $respuesta = ProductosModel::ProductosM();
         return $respuesta;

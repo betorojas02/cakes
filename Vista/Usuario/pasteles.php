@@ -1,3 +1,8 @@
+<?php
+require_once ('../../Controlador/ProductoControlador.php');
+$pasteles = ProductosController::getPastelesControllers();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,8 +18,42 @@
 <body>
  <?php include('navbar/navbarUsuario.php');?>
 
+    <div class="container">
+        <div class="row">
 
+        <?php 
+            foreach($pasteles as $pa):
+                ?>
 
+            <div class="col s12 m6 l3">
+
+            <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="../asset/img/pr.jpg">
+            </div>
+                <!-- <a class="add-btn-flt btn btn-floating pink darken-1">
+                    <i class="material-icons ">add</i>
+                </a> -->
+            <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4"><?php echo $pa['nombre']; ?><a class="add-btn-flt btn btn-floating pink darken-1">
+                <i class="material-icons" id="adds">add</i>
+                </a></span>
+                <p><a href="#!" id="linkCarritoProducto"><h5>Agregar al carrito</h5></a></p>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Postre<i class="material-icons right">close</i></span>
+                <p>Nombre: <?php echo $pa['nombre']; ?></p>
+                <p>Precio: <?php echo $pa['precio']; ?></p>
+                <p>Descripcion: <?php echo $pa['descripcion']; ?></p>
+            <!-- <p><a href="carrito/index.php?id=13"><h6>Agregar al carrito</h6></a></p> -->
+            </div>
+            </div>
+            </div>
+
+<?php endforeach ?>
+
+    </div>
+</div>
   <!--  script jquery  -->
   <script type="text/javascript" src="../asset/js/jquery-3.3.1.min.js"></script>
     <!-- Compiled and minified JavaScript -->
