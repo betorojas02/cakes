@@ -1,5 +1,6 @@
 <?php
  require_once('../../Controlador/UsuarioControlador.php');
+
 if(isset($_POST['id_usuario']) && isset($_POST['ciudad']) ){
 
 

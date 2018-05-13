@@ -1,9 +1,9 @@
-$ (document).ready (function () {
-  $ ('.slider').slider ();
-  $ ('.modal').modal ();
-  $ ('.tabs').tabs ();
-  $ ('.dropdown-trigger').dropdown ();
-  $ ('#example').DataTable ({
+$(document).ready(function () {
+  $('.slider').slider();
+  $('.modal').modal();
+  $('.tabs').tabs();
+  $('.dropdown-trigger').dropdown();
+  $('#example').DataTable({
     language: {
       sProcessing: 'Procesando...',
       sLengthMenu: 'Mostrar _MENU_ registros',
@@ -31,11 +31,17 @@ $ (document).ready (function () {
   });
 
   // $(".button-collapse").sideNav();
-  $ (window).scroll (function () {
-    if ($ (document).scrollTop () > 50) {
-      $ ('#nav').addClass ('beto');
+  $(window).scroll(function () {
+    if ($(document).scrollTop() > 50) {
+      $('#nav').addClass('beto');
     } else {
-      $ ('#nav').removeClass ('beto');
+      $('#nav').removeClass('beto');
     }
   });
 });
+
+
+function addProduct(code) {
+  var amount = document.getElementById("cantidad").value;
+  window.location.href = "datosUsuario.php?action=add&code=" + code + '&amount=' + amount;;
+}

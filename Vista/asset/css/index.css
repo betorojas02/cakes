@@ -17,14 +17,14 @@ nav {
 }
 
 a#BotonLogin {
-  background-color: rgb(187, 0, 98);
+  background-color: #d81b60;
   color: #ffffff;
   font-weight: bold;
   border-left: 1px solid rgb(255, 255, 255);
 }
 
 a#BotonCarrito {
-  background-color: rgb(187, 0, 98);
+  background-color: #d81b60;
   font-weight: bold;
   height: 64px;
   border-left: 1px solid rgb(255, 255, 255);
@@ -35,7 +35,7 @@ a#BotonCarrito {
 }
 
 a#BotonSignUp {
-  background-color: rgb(187, 0, 98);
+  background-color: rgb(216, 27, 96);
   color: #ffffff;
   font-weight: bold;
   border-right: 1px solid rgb(255, 255, 255);
@@ -49,7 +49,7 @@ a#BotonSignUp {
 }
 
 #linkCarritoProducto {
-  color: rgb(187, 0, 98);
+  color: rgb(216, 27, 96);
 }
 
 div.slider ul li {
@@ -65,7 +65,7 @@ nav a.brand-logo {
   font-size: 75px;
   transform: translatex(-50%);
   /* padding: 10px; */
-  color: rgb(187, 0, 98);
+  color: rgb(216, 27, 96);
   text-align: center;
   margin-top: -5px;
 }
@@ -96,7 +96,7 @@ ul#sesion {
 }
 
 .material-icons {
-  color: rgb(187, 0, 98);
+  color: rgb(216, 27, 96);
 }
 
 nav ul li {
@@ -105,7 +105,7 @@ nav ul li {
 
 nav a,
 nav ul li a {
-  color: rgb(187, 0, 98);
+  color: rgb(216, 27, 96);
 }
 
 nav a,

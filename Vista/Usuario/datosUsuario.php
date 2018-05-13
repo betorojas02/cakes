@@ -1,7 +1,7 @@
   <?php
    require_once "../../Controlador/UsuarioControlador.php";
+   require_once "../../include/session.php"; 
 
-  session_start( );
 
   $id =  $_SESSION["usuario"]["id_usuario"];
   // $usu = new UsuarioControlador();
@@ -36,8 +36,9 @@
   <div class="row">
     <div class="col s12">
           <ul class="tabs ">
-            <li class="tab col s4 "><a class="active" href="#datosU">Datos De Usuario</a></li>
+            <li class="tab col s4 "><a  href="#datosU">Datos De Usuario</a></li>
             <li class="tab col s4 "><a  href="#comprasU">mis compras</a></li>
+            <li class="tab col s4 "><a  class="active" href="#carritoCompras">Carrito </a></li>
           </ul>
     </div>
     
@@ -98,7 +99,14 @@
             
         </div>
 
+        <div id="carritoCompras">
   
+            <div class="row" id="datos">
+              
+       
+            </div>
+  
+        </div>
   
 
 
@@ -166,6 +174,7 @@
     <script  src="../asset/js/index.js"></script>
       <script type="text/javascript" src="../asset/js/registro.js"></script>
       <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+   
 
 
 

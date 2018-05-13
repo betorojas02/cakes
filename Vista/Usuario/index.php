@@ -78,7 +78,13 @@ session_start();
             <span class="card-title activator grey-text text-darken-4"><?php echo $pro['nombre']; ?><a class="add-btn-flt btn btn-floating pink darken-1">
               <i class="material-icons" id="adds">add</i>
             </a></span>
-            <p><a href="#!" id="linkCarritoProducto"><h5>Agregar al carrito</h5></a></p>
+            <div class="input-field ">
+						<label>Cantidad</label>
+						<input  class="validate" type="number"  id="cantidad" value="1"  min="1"  >
+					</div>
+          <?php  $code = $pro['id_producto']; ?>
+          <a class="waves-effect waves-light btn pink darken-1"   onClick="addProduct(<?PHP echo $code ?>);">Agregar Carrito</a>
+            <!-- <p><a href="datosUsuario.php#carritoCompras" id="linkCarritoProducto"><h5>Agregar al carrito</h5></a></p> -->
           </div>
           <div class="card-reveal">
             <span class="card-title grey-text text-darken-4">Postre<i class="material-icons right">close</i></span>

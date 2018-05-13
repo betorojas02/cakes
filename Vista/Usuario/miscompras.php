@@ -7,7 +7,9 @@
  
  ?>
 
- <?php  foreach ($productos as $pro):
+ <?php 
+ if($productos > 0){
+  foreach ($productos as $pro):
    # code...
  ?>
  <table id="example" class="striped" cellspacing="0" width="100%" >
@@ -37,3 +39,18 @@
           </table>
 
  <?php endforeach ?>
+  <?php }else{?>
+
+          <br>
+          <br>
+          <br>
+  <div class="container">
+    <div class="row">
+                <div class="center">
+                  <div class="card-panel  pink darken-1" id="np">
+                  No Hay Compras Disponibles
+                  </div>
+                </div>  
+              </div>
+    </div>
+  <?php }?>

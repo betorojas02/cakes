@@ -26,9 +26,6 @@ class ProductosModel extends Conexion
          $resultado = self::$cnx->prepare($sql);
          $resultado->execute();
          return $resultado->fetchAll();
-
-     
-
     }
 
     public static function pastelesModel()
@@ -39,12 +36,7 @@ class ProductosModel extends Conexion
          $resultado = self::$cnx->prepare($sql);
          $resultado->execute();
          return $resultado->fetchAll();
-
-    
-
     }
-
-   
 
     public function ProductosM()
     {
