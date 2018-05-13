@@ -34,7 +34,12 @@ class DetallePedidoDao extends Conexion
          $resultado = self::$cnx->prepare($sql);
          $resultado->bindParam(":id_usuario", $id);
          $resultado->execute();
-         return $resultado->fetchAll();
+
+         if($resultado -> rowCount() > 0){
+
+           return $resultado->fetchAll();
+          }
+          return  false;
 
 
     }
