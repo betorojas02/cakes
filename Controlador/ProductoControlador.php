@@ -29,6 +29,14 @@ class ProductosController
    
     }
 
+    public static function getDulcesControllers()
+    {
+
+        $respuesta = ProductosModel::dulcesModel();
+        return $respuesta;
+   
+    }
+
     public static function ProductosC(){
         $respuesta = ProductosModel::ProductosM();
         return $respuesta;

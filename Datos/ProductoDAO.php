@@ -51,6 +51,18 @@ class ProductosModel extends Conexion
 
     }
 
+    public static function dulcesModel()
+    {
+        $sql = "SELECT * FROM producto where id_tipo=3";
+
+         self::getConexion();
+         $resultado = self::$cnx->prepare($sql);
+         $resultado->execute();
+         return $resultado->fetchAll();
+
+    
+
+    }
    
 
     public function ProductosM()

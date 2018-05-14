@@ -22,10 +22,10 @@
       <!-- <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a> -->
       <ul class="hide-on-med-and-down ">
         <li class="link"><a href="index.php">Inicio</a></li>
+        <li class="link"><a href="favoritos.php">Favoritos</a></li>
         <li class="link"><a href="pasteles.php">Pasteles</a></li>
         <li class="link disable"><a href="postres.php">Postres</a></li>
-        <li class="link"><a href="#!">Dulces y Galletas</a></li>
-        <li class="link"><a href="#!">Favoritos</a></li>
+        <li class="link"><a href="dulces.php">Dulces y Galletas</a></li>
         <ul id="" class="hide-on-med-and-down right">
           <!-- <li><a href="carrito/index.php" id="BotonCarrito" title="Ver Carrito de Compras"><img height="50px" src="img/carrito.png"></a></li> -->
 <li><a class="dropdown-trigger" href="#!" data-target="dropdown1" id="BotonLogin" ><?php  echo $_SESSION["usuario"]["correo"];?><i class="material-icons right" style="color:rgb(73, 243, 244)">arrow_drop_down</i></a></li>
@@ -103,10 +103,10 @@
 <!-- <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a> -->
 <ul class="hide-on-med-and-down ">
   <li class="link"><a href="index.php">Inicio</a></li>
+  <li class="link"><a href="favoritos.php">Favoritos</a></li>
   <li class="link"><a href="pasteles.php">Pasteles</a></li>
   <li class="link disable"><a href="postres.php">Postres</a></li>
-  <li class="link"><a href="#!">Dulces y Galletas</a></li>
-  <li class="link"><a href="#!">Favoritos</a></li>
+  <li class="link"><a href="dulces">Dulces y Galletas</a></li>
   <ul id="" class="hide-on-med-and-down right">
     <!-- <li><a href="carrito/index.php" id="BotonCarrito" title="Ver Carrito de Compras"><img height="50px" src="img/carrito.png"></a></li> -->
     <li><a href="../Usuario/registrar.php" id="BotonSignUp">Registrate</a></li>
