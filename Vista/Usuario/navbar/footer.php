@@ -7,7 +7,7 @@
                 <li><a class="grey-text text-lighten-3" href="../Usuario/información.php">¿Quienes somos?</a></li>
               </div>
               <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Contactanos</h5>
+                <h5 class="white-text">Contáctanos</h5>
                 <ul>
                 <i class="material-icons">camera_alt</i>
                   <li><a class="grey-text text-lighten-3" href="https://www.instagram.com/lb__cakes/?hl=es-la">@lb_cakes</a></li>

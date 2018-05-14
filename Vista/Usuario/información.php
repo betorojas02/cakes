@@ -19,7 +19,42 @@ session_start();
 <body>
 <main>
  <?php include 'navbar/navbarUsuario.php';?>
+ <h3><center><div style="color:#CB115A">¿Quienes somos? </div></center></h3>
+   <div class="container">
+    <div class="row">
+    <div class="col s12 m5">
+      <div class="card-panel pink">
+        <span class="white-text">L&B Cakes es una microempresa la cual se dedica a la elaboración, venta y comercialización de productos de repostería, que ofrece amplia variedad de sabores para sus deliciosos pasteles, postres y variados bocadillos, también postres como pay y cheesecakes.
+        </span>
+      </div>
+    </div>
+  </div>    
+  </div>
+</div>
 
+<div class="container">
+  <div class="row">
+    <div class="col s12 m5">
+      <div class="card-panel pink">
+        <span class="white-text">Nuestra visión es convertirnos una empresa referente a productos de Pateleria. Obtener el reconocimiento de todos nuestros clientes. Aportar innovación y creatividad en nuestros productos así como un ejemplo de buen servicio y rentabilidad.
+        </span>
+      </div>
+    </div>
+  </div>    
+  </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col s12 m5">
+      <div class="card-panel pink">
+        <span class="white-text">Nuestra misión es darnos a conocer localmente y dar lo mejor de nosotros para lograr estar a la altura de la  marca que representamos
+      </div>
+    </div>
+  </div>    
+  </div>
+  </div>
+  
     
 
 </div>
