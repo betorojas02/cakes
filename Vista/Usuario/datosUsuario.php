@@ -118,7 +118,9 @@
    <!-- cierra de container principal -->
 </div>
                  
-                      
+<footer class="page-footer">
+          <?php include("navbar/footer.php"); ?>
+    </footer>                        
          <div id="modal2" class="modal fixed-footer trans-card z-depth-4">
           <div class="modal-content trans-card col s12 ">
             <div class="row" style="padding:5%;overflow:hidden;">
@@ -162,7 +164,9 @@
 
 
       <?php  endforeach ?>
-            
+
+
+  
           
     <!--  script jquery  -->
     <script type="text/javascript" src="../asset/js/jquery-3.3.1.min.js"></script>
