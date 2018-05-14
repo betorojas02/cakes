@@ -10,6 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="../asset/css/materialize.min.css">
 	<link rel="stylesheet" type="text/css" href="../asset/pink/pace-theme-flash.css">
 	<!-- Carga asincronida media="none" onload="if(media!='all')media='all'"-->
+	<link rel="stylesheet" href="../asset/css/login.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
@@ -30,7 +31,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="s12 m12 l12 center">
-				<a href="index.php"><h1>L&B</h1></a>
+				<a href="index.php"><h1 id="l">L&B</h1></a>
 			</div>
 			<div class="col s12 m12 l12">
 				<br>
@@ -83,7 +84,10 @@
 						<input  class="validate" type="number" name="cedula" id="cedula" required >
 					</div>
 						<!-- fecha -->
-					 <input  type="text" class="datepicker" id="fecha" required>
+						<div class="input-field col s6">
+						<label>fecha</label>
+							<input  type="text" class="datepicker" id="fecha" required>
+						</div>
 						<!-- <div class="col s12">
 								<label>fecha de nacimiento</label>
 								<input type="text" class="datepicker" name="fecha" id="fecha">
@@ -94,20 +98,20 @@
 
           <label>Sexo</label><br><br>
             <label>
-              <input type="radio" name="edad" id="edad1" value="1" required>
+              <input type="radio" name="edad" id="edad1" value="1" required   >
                   <span>Masculino</span>
            </label>
 					 <label>
-						 <input type="radio" name="edad" id="edad2" value="2">
+						 <input type="radio" name="edad" id="edad2" value="2"  >
 								 <span>Femenino</span>
 					</label>
 					<div class="center col s12 m12 l12">
 						<br>
-						<button class="btn waves-effect waves-light left" type="submit" id="submit-item" value="add">Enviar
+						<button class="btn waves-effect waves-light left pink darken-1" type="submit" id="submit-item" value="add">Enviar
 							<i class="material-icons right">send</i>
 						</button>
 
-						<button class="btn waves-effect waves-light right" type="reset" name="enviar">Restablecer</button>
+						<button class="btn waves-effect waves-light right pink darken-1" type="reset" name="enviar">Restablecer</button>
 
 					</div>
 

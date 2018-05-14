@@ -69,6 +69,6 @@ $var = $_REQUEST["user_id"];
   <script type="text/javascript" src="../asset/js/login.js"></script>
   <script type="text/javascript" src="../asset/js/recuperar.js"></script>
 	<script type="text/javascript" src="../asset/js/pace.min.js"></script>
-</body>
+</body> 
 
 </html>

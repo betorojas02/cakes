@@ -14,44 +14,73 @@ body {
 
 .input-field input[type='date']:focus,
 .input-field input[type='text']:focus,
+.input-field input[type='number']:focus,
+.input-field input[type='radio']:focus,
 .input-field input[type='email']:focus,
 .input-field input[type='password']:focus {
-  color: #cc00e6;
+  color: #d81b60;
 }
 
-.input-field input[type='date']:focus + label,
-.input-field input[type='text']:focus + label,
-.input-field input[type='email']:focus + label,
-.input-field input[type='password']:focus + label {
-  color: #e91e63;
+.input-field input[type='date']:focus+label,
+.input-field input[type='text']:focus+label,
+.input-field input[type='number']:focus+label,
+.input-field input[type='email']:focus+label,
+.input-field input[type='password']:focus+label {
+  color: #d81b60;
 }
-.input-field input[type='date'] + label,
-.input-field input[type='text'] + label,
-.input-field input[type='email'] + label,
-.input-field input[type='password'] + label {
-  color: #cc00e6;
+
+.input-field input[type='date']+label,
+.input-field input[type='text']+label,
+.input-field input[type='number']+label,
+.input-field input[type='email']+label,
+.input-field input[type='password']+label {
+  color: #d81b60;
 }
 
 .input-field input[type='date'],
 .input-field input[type='text'],
+.input-field input[type='number'],
+.input-field input[type='radio'],
 .input-field input[type='email'],
 .input-field input[type='password'] {
-  border-bottom: 2px solid #cc00e6;
+  border-bottom: 2px solid #d81b60;
   box-shadow: none;
 }
 
 .input-field input[type='date']:focus,
 .input-field input[type='text']:focus,
+.input-field input[type='radio']:focus,
 .input-field input[type='email']:focus,
 .input-field input[type='password']:focus {
-  border-bottom: 2px solid #e91e63;
+  border-bottom: 2px solid #d81b60;
   box-shadow: none;
 }
+
+.input-field input:valid {
+  border-bottom: 2px solid #d81b60;
+  box-shadow: none;
+}
+
+[type="radio"].with-gap:checked+label:before,
+[type="radio"].with-gap:checked+label:after {
+  border: 2px solid #d81b60;
+}
+
+[type="radio"].with-gap:checked+label:after {
+  background-color: #d81b60;
+  z-index: 0;
+}
+
 #BotonCarrito {
   height: 70px;
   color: #fff;
   font-weight: bold;
 }
+
 #np {
   color: #fff;
+}
+
+#l {
+  color: #d81b60;
 }
