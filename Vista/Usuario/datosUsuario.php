@@ -33,6 +33,7 @@
     <!--  terminaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-->
   </header>
     <?php foreach ($usuarios as $usua):?>
+    <main>
   <div class="container">
   <div class="row">
     <div class="col s12">
@@ -117,7 +118,7 @@
 
    <!-- cierra de container principal -->
 </div>
-                 
+          </main>       
 <footer class="page-footer">
           <?php include("navbar/footer.php"); ?>
     </footer>                        

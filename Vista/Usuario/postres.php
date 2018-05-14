@@ -18,6 +18,7 @@ $postres = ProductosController::getPostresControllers();
 <link rel="stylesheet" type="text/css" href="../asset/pink/pace-theme-flash.css">
 </head>
 <body>
+<main>
  <?php include('navbar/navbarUsuario.php');?>
 
     <div class="container">
@@ -57,7 +58,7 @@ $postres = ProductosController::getPostresControllers();
 
     </div>
 </div>
-
+</main>
   <footer class="page-footer">
  <?php include("navbar/footer.php"); ?>
  </footer>
