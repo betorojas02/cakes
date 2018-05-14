@@ -4,8 +4,9 @@
 <meta charset="utf-8">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="../asset/css/materialize.min.css">
-  	<link rel="stylesheet" type="text/css" href="../asset/dist/sweetalert.css">
-<link rel="stylesheet" href="../asset/css/login.css">
+  <link rel="stylesheet" type="text/css" href="../asset/dist/sweetalert.css">
+  <link rel="stylesheet" href="../asset/css/login.css">
+	<link rel="stylesheet" type="text/css" href="../asset/pink/pace-theme-flash.css">
 </head>
 
 <body>
@@ -58,8 +59,10 @@
   <script type="text/javascript" src="../asset/js/jquery-3.3.1.min.js"></script>
   <script type="text/javascript" src="../asset/js/materialize.min.js"></script>
   <script type="text/javascript" src="../asset/dist/sweetalert.min.js"></script>
+  <script type="text/javascript" src="../asset/js/pace.min.js"></script>
   <script type="text/javascript" src="../asset/js/login.js"></script>
   <script type="text/javascript" src="../asset/js/restablecer.js"></script>
+
 </body>
 
 </html>

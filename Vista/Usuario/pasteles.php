@@ -1,5 +1,5 @@
 <?php
-require_once ('../../Controlador/ProductoControlador.php');
+require_once '../../Controlador/ProductoControlador.php';
 session_start();
 $pasteles = ProductosController::getPastelesControllers();
 
@@ -16,16 +16,17 @@ $pasteles = ProductosController::getPastelesControllers();
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" type="text/css" href="../asset/css/materialize.min.css">
 <link rel="stylesheet" href="../asset/css/index.css">
+<link rel="stylesheet" type="text/css" href="../asset/pink/pace-theme-flash.css">
 </head>
 <body>
- <?php include('navbar/navbarUsuario.php');?>
+ <?php include 'navbar/navbarUsuario.php';?>
 
     <div class="container">
         <div class="row">
 
-        <?php 
-            foreach($pasteles as $pa):
-                ?>
+        <?php
+foreach ($pasteles as $pa):
+?>
 
             <div class="col s12 m6 l3">
 
@@ -52,7 +53,7 @@ $pasteles = ProductosController::getPastelesControllers();
             </div>
             </div>
 
-<?php endforeach ?>
+<?php endforeach?>
 
 
     </div>
@@ -65,6 +66,7 @@ $pasteles = ProductosController::getPastelesControllers();
   <script type="text/javascript" src="../asset/js/materialize.min.js"></script>
   <!--  script funciones index -->
   <script  src="../asset/js/index.js"></script>
+  <script type="text/javascript" src="../asset/js/pace.min.js"></script>
 
 </body>
 </html>

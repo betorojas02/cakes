@@ -15,6 +15,7 @@ $postres = ProductosController::getPostresControllers();
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" type="text/css" href="../asset/css/materialize.min.css">
 <link rel="stylesheet" href="../asset/css/index.css">
+<link rel="stylesheet" type="text/css" href="../asset/pink/pace-theme-flash.css">
 </head>
 <body>
  <?php include('navbar/navbarUsuario.php');?>
@@ -64,6 +65,7 @@ $postres = ProductosController::getPostresControllers();
   <script type="text/javascript" src="../asset/js/materialize.min.js"></script>
   <!--  script funciones index -->
   <script  src="../asset/js/index.js"></script>
+  <script type="text/javascript" src="../asset/js/pace.min.js"></script>
 
 </body>
 </html>

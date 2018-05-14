@@ -8,6 +8,7 @@
 
 	<link rel="stylesheet" type="text/css" href="../asset/dist/sweetalert.css">
 	<link rel="stylesheet" type="text/css" href="../asset/css/materialize.min.css">
+	<link rel="stylesheet" type="text/css" href="../asset/pink/pace-theme-flash.css">
 	<!-- Carga asincronida media="none" onload="if(media!='all')media='all'"-->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -124,6 +125,8 @@
   <script type="text/javascript" src="../asset/dist/sweetalert.min.js"></script>
   <!--  script funciones index -->
 	<script type="text/javascript" src="../asset/js/registro.js"></script>
+	<script type="text/javascript" src="../asset/js/pace.min.js"></script>
 	
+
 </body>
 </html>

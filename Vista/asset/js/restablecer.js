@@ -3,6 +3,12 @@ $(document).on('submit', '#formR', function (event) {
 	/* Act on the event */
 	var correo = $('#correo').val();
 	// console.log('add ra');
+
+
+
+	Pace.start();
+
+
 	$.ajax({
 		url: 'datoscorreo.php',
 		type: 'POST',
@@ -13,6 +19,7 @@ $(document).on('submit', '#formR', function (event) {
 		console.error(resp);
 
 		if (!resp.error) {
+
 			swal({
 					title: "restabelcer",
 					text: "correo envio",

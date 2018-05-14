@@ -1,5 +1,6 @@
 jQuery(document).on('submit', '#formlg', function (event) {
     event.preventDefault();
+
     jQuery.ajax({
             url: 'verificarLogin.php',
             type: 'POST',

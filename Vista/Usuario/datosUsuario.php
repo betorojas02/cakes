@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="../asset/css/index.css">
   <link rel="stylesheet" href="../asset/css/datosUsu.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" type="text/css" href="../asset/pink/pace-theme-flash.css">
 
     <title>L&B CAKES</title>
   </head>
@@ -172,9 +173,10 @@
       <script type="text/javascript" src="../asset/dist/sweetalert.min.js"></script>
     <!--  script funciones index -->
     <script  src="../asset/js/index.js"></script>
+    <script  src="../asset/js/datatables.js"></script>
       <script type="text/javascript" src="../asset/js/registro.js"></script>
       <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-   
+      <script type="text/javascript" src="../asset/js/pace.min.js"></script>
 
 
 

@@ -9,6 +9,7 @@ $var = $_REQUEST["user_id"];
   <link rel="stylesheet" type="text/css" href="../asset/css/materialize.min.css">
   	<link rel="stylesheet" type="text/css" href="../asset/dist/sweetalert.css">
     <link rel="stylesheet" href="../asset/css/login.css">
+    <link rel="stylesheet" type="text/css" href="../asset/pink/pace-theme-flash.css">
 </head>
 
 <body>
@@ -67,6 +68,7 @@ $var = $_REQUEST["user_id"];
   <script type="text/javascript" src="../asset/dist/sweetalert.min.js"></script>
   <script type="text/javascript" src="../asset/js/login.js"></script>
   <script type="text/javascript" src="../asset/js/recuperar.js"></script>
+	<script type="text/javascript" src="../asset/js/pace.min.js"></script>
 </body>
 
 </html>
