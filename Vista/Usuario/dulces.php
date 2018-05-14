@@ -19,6 +19,7 @@ $dulces = ProductosController::getDulcesControllers();
 <link rel="stylesheet" type="text/css" href="../asset/pink/pace-theme-flash.css">
 </head>
 <body>
+<main>
  <?php include 'navbar/navbarUsuario.php';?>
 
     <div class="container">
@@ -58,6 +59,10 @@ foreach ($dulces as $du):
 
     </div>
 </div>
+</main>
+<footer class="page-footer">
+ <?php include("navbar/footer.php"); ?>
+ </footer>
   <!--  script jquery  -->
   <script type="text/javascript" src="../asset/js/jquery-3.3.1.min.js"></script>
     <!-- Compiled and minified JavaScript -->
