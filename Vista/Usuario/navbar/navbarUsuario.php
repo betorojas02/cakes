@@ -106,7 +106,7 @@
   <li class="link"><a href="favoritos.php">Favoritos</a></li>
   <li class="link"><a href="pasteles.php">Pasteles</a></li>
   <li class="link disable"><a href="postres.php">Postres</a></li>
-  <li class="link"><a href="dulces">Dulces y Galletas</a></li>
+  <li class="link"><a href="dulces.php">Dulces y Galletas</a></li>
   <ul id="" class="hide-on-med-and-down right">
     <!-- <li><a href="carrito/index.php" id="BotonCarrito" title="Ver Carrito de Compras"><img height="50px" src="img/carrito.png"></a></li> -->
     <li><a href="../Usuario/registrar.php" id="BotonSignUp">Registrate</a></li>
