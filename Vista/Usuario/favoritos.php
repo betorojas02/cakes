@@ -20,7 +20,7 @@ session_start();
  <?php include 'navbar/navbarUsuario.php';?>
 
     
-    
+
 </div>
   <!--  script jquery  -->
   <script type="text/javascript" src="../asset/js/jquery-3.3.1.min.js"></script>
@@ -32,5 +32,21 @@ session_start();
   <script  src="../asset/js/index.js"></script>
   <script type="text/javascript" src="../asset/js/pace.min.js"></script>
 
+<style>
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    color: DeepPink;
+    text-align: center;
+}
+</style>
+
+<div class="footer">
+  <p>Footer</p>
+</div>
+</div>
 </body>
 </html>
