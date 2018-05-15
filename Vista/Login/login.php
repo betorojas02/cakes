@@ -77,7 +77,9 @@ session_start();
       </div>
       <a  class='pink-text' href="../Usuario/registrar.php">Crear Cuenta</a>
       <br>
-      <a  class='pink-text' href="restablecer.php">olvidaste tu contraseña ?</a>
+      <a  class='pink-text' href="restablecer.php">¿Olvidaste Tu Contraseña ?</a>
+      <br>
+      <a  class='pink-text' href="../Usuario/index.php">Volver Al Inicio</a>
     </center>
 
     <div class="section"></div>

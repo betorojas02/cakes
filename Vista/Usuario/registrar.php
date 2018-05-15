@@ -118,6 +118,7 @@
 
 				</form>
 				<p class="col s12 m12 l12 center"><h6 class="center">¿Ya tienes una cuenta? <a href="../login/login.php">Iniciar sesión</a> </h6></p>
+				<a  class='pink-text' href="index.php">Volver Al Inicio</a>
 			</div>
 
 			<!-- Fin registrar cuenta -->
