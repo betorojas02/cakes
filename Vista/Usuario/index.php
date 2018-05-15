@@ -70,7 +70,7 @@ session_start();
 
         <div class="card">
           <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="../asset/img/pr.jpg">
+            <img class="activator" src="<?php echo $pro['imagen'] ?>">
           </div>
               <!-- <a class="add-btn-flt btn btn-floating pink darken-1">
                 <i class="material-icons ">add</i>
