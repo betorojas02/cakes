@@ -25,7 +25,7 @@
       */
       public static function getTipos()
       {
-          $sql = "SELECT * FROM tipo";
+          $sql = "SELECT * FROM tipo WHERE estado = 'A'";
           self::getConexion();
           $resultado = self :: $cnx->prepare($sql);
           $resultado->execute();
@@ -37,26 +37,67 @@
       }
 
       /**
-      * Método para validar insertar
-      * @param object claseTipo
-      * @return object
-      */
-      public static function insertarTipos()
-      {
-          $sql = "INSERT INTO tipo (nombre_tipo) VALUES(default, ?)";
-          self::getConexion();
-          $resultado = self :: $cnx->prepare($sql);
-          $resultado->execute();
-          if($resultado->rowCount()>0)
+          * Método para ingresar nuevas categorias
+          * @param object Categoria
+          * @return datos
+          */
+          public static function addTipo($tipo)
           {
-            return $resultado;
+              $sql = "INSERT INTO tipo (nombre_tipo,estado)
+              VALUES (:nombre,:estado)";
+              self::getConexion();
+
+              $sql2 = "SELECT * FROM tipo WHERE UPPER(nombre_tipo) LIKE UPPER(:nomb)";
+
+              $res = self::$cnx->prepare($sql2);
+              $nom = "%".$tipo->getNombre_tipo()."%";
+              $res->bindParam(":nomb", $nom);
+              $res->execute();
+              if($res->rowCount()<1)
+              {
+                $resultado = self::$cnx->prepare($sql);
+
+
+                $nombre = $tipo->getNombre_tipo();
+                $estado = $tipo->getEstado();
+
+
+                $resultado->bindParam(":nombre", $nombre);
+
+                $resultado->bindParam(":estado", $estado);
+
+                 $resultado->execute();
+
+
+
+                 return true;
+
+              }
+              else {
+                    return false;
+              }
           }
-          return false;
+
+          public static function eliminarTipo($tipo)
+          {
+            $sql = "UPDATE tipo SET estado = :estado  where id_tipo = :id  ";
+            self::getConexion();
 
 
+              $resultado = self::$cnx->prepare($sql);
+
+              $estado = $tipo->getEstado();
+              $id = $tipo->getId_tipo();
+
+
+              $resultado->bindParam(":estado",  $estado );
+              $resultado->bindParam(":id", $id );
+
+               $resultado->execute();
+
+               return true;
+          }
       }
 
-
-  }
 
 ?>

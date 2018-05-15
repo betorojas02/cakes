@@ -44,13 +44,13 @@ else
               <?php
                 include '../../Controlador/ProductoControlador.php';
 
-                $resultado = ProductoControlador::getProductos();
+                $resultado = ProductosController::getProductosControllers();
 
-                While ($filas =  $resultado->fetch())
+              foreach ($resultado as $filas)
                 {
                   echo "<tr>";
                 //  echo "<td style='padding:20px;'>";  echo "$filas[id_producto]";  echo "</td>";
-                  echo "<td style='padding:20px;'>";  echo "$filas[nombre_tipo]";  echo "</td>";
+                  echo "<td style='padding:20px;'>";  echo "$filas[id_tipo]";  echo "</td>";
                   echo "<td style='padding:20px;'>";  echo "$filas[nombre]";  echo "</td>";
                   echo "<td style='padding:20px;'>";  echo "$filas[descripcion]";  echo "</td>";
                   echo "<td style='padding:20px;'>";  echo "$filas[precio]";  echo "</td>";
@@ -126,44 +126,6 @@ else
 
 
 
-
-           <dialog class="mdl-dialog" id="Editar">
-             <div class="modal" id="editUsu" tabindex="-1" role="dialog" aria-labellebdy="myModalLabel" aria-hidden="true">
-       <div class="modal-dialog">
-           <div class="modal-content">
-               <div class="modal-header">
-                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                   <h4>Editar Contacto</h4>
-               </div>
-               <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
-                  <form action="actualiza.php" method="POST">
-
-                             <input  id="id" name="id" type="hidden" ></input>
-                         <div class="form-group">
-                           <label for="nombre">Nombre:</label>
-                           <input class="form-control" id="nombre" name="nombre" type="text" ></input>
-                         </div>
-                         <div class="form-group">
-                           <label for="edad">Edad:</label>
-                           <input class="form-control" id="edad" name="edad" type="text" ></input>
-                         </div>
-                         <div class="form-group">
-                           <label for="direccion">Direccion:</label>
-                           <input class="form-control" id="direccion" name="direccion" type="text" ></input>
-                         </div>
-
-             <input type="submit" class="mdl-button mdl-js-button  btn-success">
-                  </form>
-               </div>
-               <div class="modal-footer">
-                   <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
-               </div>
-           </div>
-       </div>
-   </div>
-
-
-           </dialog>
 
 
            <script>

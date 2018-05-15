@@ -40,43 +40,84 @@ Class ProveedorDAO extends Conexion
         return false;
     }
 
+
     /**
     * Método para ingresar nuevos ingredientes
     * @param object Usuario
     * @return datos
     */
-    // public static function insertIngre($ingrediente)
+    public static function addProveedor($proveedor)
+    {
+        $sql = "INSERT INTO proveedor (nombre_empresa,nombre_contacto,telefono_proveedor,direccion_proveedor,
+          ciudad_proveedor,pais_proveedor,region_proveedor,sitio_web_proveedor,estado)
+        VALUES (:nomE,:nomC,:tel,:dir,:ciudad,:pais,:region,:sitio,:estado)";
+        self::getConexion();
+
+        $sql2 = "SELECT * FROM proveedor WHERE UPPER(nombre_empresa) LIKE UPPER(:nomb)";
+
+        //$sql3 = "UPDATE prive SET cantidad = cantidad + :cantidad WHERE UPPER(nombre_ingrediente) LIKE UPPER(:nombr) ";
+
+        $res = self::$cnx->prepare($sql2);
+        $nom = "%".$proveedor->getNombreEmpresa()."%";
+        $res->bindParam(":nomb", $nom);
+        $res->execute();
+        if($res->rowCount()<1)
+        {
+          $resultado = self::$cnx->prepare($sql);
+
+          $nombE = $proveedor->getNombreEmpresa();
+          $nombC = $proveedor->getNombreContacto();
+          $tel = $proveedor->getTelefono();
+          $dir =  $proveedor->getDireccion();
+          $ciudad =  $proveedor->getCiudad();
+          $pais =  $proveedor->getPais();
+          $region =  $proveedor->getRegion();
+          $sitio = $proveedor->getSitio();
+          $estado =  $proveedor->getEstado();
+
+
+          $resultado->bindParam(":nomE", $nombE);
+          $resultado->bindParam(":nomC", $nombC);
+          $resultado->bindParam(":tel", $tel);
+          $resultado->bindParam(":dir", $dir);
+          $resultado->bindParam(":ciudad", $ciudad);
+          $resultado->bindParam(":pais", $pais);
+          $resultado->bindParam(":region", $region);
+          $resultado->bindParam(":sitio", $sitio);
+          $resultado->bindParam(":estado", $estado);
+
+           $resultado->execute();
+
+           return true;
+
+        }
+        else {
+              return false;
+        }
+    }
+
+
+    // public static function eliminarIng($ingrediente)
     // {
-    //     $sql = "SELECT * FROM usuario
-    //     WHERE correo  = :correo  AND clave = :clave ";
+    //   $sql = "UPDATE ingrediente SET estado = :estado  where id_ingrediente = :id  ";
+    //   self::getConexion();
     //
     //
-    //     self::getConexion();
     //
     //     $resultado = self::$cnx->prepare($sql);
     //
-    //     $correo = $usuario->getCorreo();
-    //     $clave = $usuario->getClave();
+    //     $estado = $ingrediente->getEstado();
+    //     $id = $ingrediente->getId_ingrediente();
     //
-    //     $resultado->bindParam(":correo", $correo);
-    //     $resultado->bindParam(":clave", $clave);
+    //
+    //     $resultado->bindParam(":estado",  $estado );
+    //     $resultado->bindParam(":id", $id );
     //
     //      $resultado->execute();
     //
-    //
-    //
-    //     if($resultado->rowCount()>0)
-    //     {
-    //
-    //       $filas =  $resultado->fetch();
-    //           if($filas["correo"] == $usuario->getCorreo() &&
-    //             $filas["clave"] == $usuario->getClave())
-    //           {
-    //              return $filas;
-    //           }
-    //     }
-    //     return false;
+    //      return true;
     // }
+
 
 
 }

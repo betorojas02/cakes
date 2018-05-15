@@ -46,7 +46,9 @@
   </defs>
 </svg>
 
-<script src="../Diseños/js/material.min.js"></script>
+
+<script scr="../Diseños/js/material.min.js"></script>
+
 
 
 

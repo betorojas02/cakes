@@ -24,7 +24,7 @@ Class IngredienteDAO extends Conexion
     public static function getIngredientes()
     {
         $sql = "SELECT * FROM ingrediente
-        INNER JOIN proveedor ON ingrediente.id_proveedor = proveedor.id_proveedor";
+        INNER JOIN proveedor ON ingrediente.id_proveedor = proveedor.id_proveedor  WHERE ingrediente.estado = 'A' ";
         self::getConexion();
 
         $resultado = self::$cnx->prepare($sql);
@@ -82,6 +82,27 @@ Class IngredienteDAO extends Conexion
         }
     }
 
+
+    public static function eliminarIng($ingrediente)
+    {
+      $sql = "UPDATE ingrediente SET estado = :estado  where id_ingrediente = :id  ";
+      self::getConexion();
+
+    
+
+        $resultado = self::$cnx->prepare($sql);
+
+        $estado = $ingrediente->getEstado();
+        $id = $ingrediente->getId_ingrediente();
+
+
+        $resultado->bindParam(":estado",  $estado );
+        $resultado->bindParam(":id", $id );
+
+         $resultado->execute();
+
+         return true;
+    }
 
 
 }
