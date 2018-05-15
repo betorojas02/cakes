@@ -29,8 +29,9 @@ else
               <th style="padding:20px;">No.</th>
               <th style="padding:20px;">Nombre perfil</th>
               <th style="padding:20px;"></th>
-             
-              <th style="padding:20px;"> <a href="#!" ><button class="mdl-button mdl-button--raised mdl-button-accent mdl-color--pink-A100'"><i class="material-icons">add</i>Agregar perfil </button></a></th>
+
+              <th style="padding:20px;">  <button id="new" class='mdl-button show-modal  mdl-js-button mdl-button--raised mdl-button--accent mdl-color--pink-A100'><i class="material-icons">add</i> Nuevo Perfil</button>  <br><br> </th>
+              <th style="padding:20px;"></th>
           </tr>
         </thead>
 
@@ -52,8 +53,56 @@ else
 
       </div>
         </main>
-      <br><br>
 
+
+
+        <dialog class="mdl-dialog" id="Nuevo">
+        <div class="modal" id="nuevoPefil" role="dialog" aria-labellebdy="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="mdl-button mdl-js-button mdl-button--icon close mdl-color--pink-A100" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4>Nuevo Perfil</h4>
+                  </div>
+                  <div class="modal-body">
+                     <form name="signup" method="post" id="form-item" action="">
+
+                       <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                         <input class="mdl-textfield__input" type="text" id="nombre" name="nombre" type="text" placeholder="Nombre" required>
+                         <label class="mdl-textfield__label" for="nombre">Nombre</label>
+                       </div>
+
+
+
+                      <button type="submit" class="class='mdl-button show-modal  mdl-js-button mdl-button--raised mdl-button--accent mdl-color--pink-A100" id="submit-item" value="add">Crear</button>
+                     </form>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+</dialog>
+
+
+
+
+
+    <script>
+    var dialog = document.querySelector('#Nuevo');
+    var showModalButton = document.querySelector('#new');
+    if (! dialog.showModal) {
+      dialogPolyfill.registerDialog(dialog);
+    }
+    showModalButton.addEventListener('click', function() {
+      dialog.showModal();
+    });
+    dialog.querySelector('.close').addEventListener('click', function() {
+      dialog.close();
+    });
+
+
+
+    </script>
 
 
     <script src="../../Vista/Login/js/materialize.min.js"></script>

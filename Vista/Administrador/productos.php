@@ -44,13 +44,13 @@ else
               <?php
                 include '../../Controlador/ProductoControlador.php';
 
-                $resultado = ProductosController::getProductosControllers();
+                $resultado = ProductoControlador::getProductos();
 
                 While ($filas =  $resultado->fetch())
                 {
                   echo "<tr>";
                 //  echo "<td style='padding:20px;'>";  echo "$filas[id_producto]";  echo "</td>";
-                  echo "<td style='padding:20px;'>";  echo "$filas[tipo]";  echo "</td>";
+                  echo "<td style='padding:20px;'>";  echo "$filas[nombre_tipo]";  echo "</td>";
                   echo "<td style='padding:20px;'>";  echo "$filas[nombre]";  echo "</td>";
                   echo "<td style='padding:20px;'>";  echo "$filas[descripcion]";  echo "</td>";
                   echo "<td style='padding:20px;'>";  echo "$filas[precio]";  echo "</td>";
@@ -60,7 +60,7 @@ else
                   echo "<td style='padding:20px;'>";  echo "$filas[votos]";  echo "</td>";
 
                   echo "<td style='padding:20px;' > <span class='glyphicon glyphicon-pencil'></span>  <button id='ed' class='mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-color--pink-A100'>Editar</button></a> </td>";
-                  echo "<td style='padding:20px;' > <a class='btn btn-danger' href=''> <button class='mdl-button show-modal mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-color--pink-A100'>Eliminar</button></a> </td>";
+                  echo "<td style='padding:20px;' > <a class='btn btn-danger' href='eliminaP.php?i2=".$filas['id_producto']."'> <button class='mdl-button show-modal mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-color--pink-A100'>Eliminar</button></a> </td>";
                   echo "</tr>";
                 }
               ?>

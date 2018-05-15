@@ -5,7 +5,7 @@ include '../../Datos/IngredienteDAO.php';
     class IngreControlador
     {
 
-        public static function  getDatos ()
+        public static function  getDatos()
         {
           return IngredienteDAO::getIngredientes();
         }
@@ -23,7 +23,15 @@ include '../../Datos/IngredienteDAO.php';
 
         }
 
+        public static function  eliminarDatos ($id)
+        {
+          $obj_ingre = new Ingrediente();
+          $obj_ingre->setId_ingrediente($id);
+          $obj_ingre->setEstado("I");
+          return IngredienteDAO::eliminarIng($obj_ingre);
+        }
+
 
     }
-  
+
 ?>

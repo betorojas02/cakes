@@ -11,7 +11,7 @@ $ruta = $_FILES["imagen"]["tmp_name"];
 $destino = "../../files/".$imagen;
 
 
-if( $foto["type"] == "imagen/jpg"  OR $foto["type"] == "image/jpeg" )
+if( $foto["type"] == "imagen/jpg"  OR $foto["type"] == "image/jpeg" OR $foto["type"] == "image/png" )
 {
   copy($ruta,$destino);
   //$ruta = "../../files/".md5($imagen["tmp_name"]).".jpg";

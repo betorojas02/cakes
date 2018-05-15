@@ -51,8 +51,8 @@ else
                   echo "<td style='padding:20px;'>";  echo "$filas[precio]";  echo "</td>";
                   echo "<td style='padding:20px;'>";  echo "$filas[cantidad]";  echo "</td>";
                   echo "<td style='padding:20px;'>";  echo "$filas[nombre_empresa]";  echo "</td>";
-                  echo "<td style='padding:20px;' > <a id='editI' data-toggle='modal' data-target='#editI' data-id='" .$filas['id_ingrediente'] ."' data-nombre='" .$filas['nombre_ingrediente'] ."' data-precio='" .$filas['precio'] ."' data-cantidad='" .$filas['cantidad']."' data-proveedor='" .$filas['nombre_empresa'] ."' class='mdl-button mdl-js-button mdl-button--raised mdl-js-button mdl-button--accent mdl-color--pink-A100'>  Editar</a> </td>";
-                  echo "<td style='padding:20px;' > <a class='btn btn-danger' href='elimina.php?id=".$filas['id_ingrediente']."'> <button class='mdl-button show-modal mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-color--pink-A100'>Eliminar</button></a> </td>";
+                  echo "<td style='padding:20px;' > <a id='editI' data-toggle='modal' data-target='#dialog' data-id='" .$filas['id_ingrediente'] ."' data-nombre='" .$filas['nombre_ingrediente'] ."' data-precio='" .$filas['precio'] ."' data-cantidad='" .$filas['cantidad']."' data-proveedor='" .$filas['nombre_empresa'] ."' class='mdl-button mdl-js-button mdl-button--raised mdl-js-button mdl-button--accent mdl-color--pink-A100'>  Editar</a> </td>";
+                  echo "<td style='padding:20px;' > <a class='btn btn-danger' href='eliminaI.php?i2=".$filas['id_ingrediente']."'> <button class='mdl-button show-modal mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-color--pink-A100'>Eliminar</button></a> </td>";
                   echo "</tr>";
                 }
 
@@ -164,6 +164,9 @@ else
 
 
 
+
+
+
            <script>
              var dialog = document.querySelector('#Nuevo');
              var showModalButton = document.querySelector('#new');
@@ -194,11 +197,6 @@ else
     					});
 
   					}());
-
-
-
-
-
            </script>
 
 
