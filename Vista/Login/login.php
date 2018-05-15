@@ -22,6 +22,7 @@ session_start();
   <link rel="stylesheet" type="text/css" href="../asset/css/materialize.min.css">
   <link rel="stylesheet" type="text/css" href="../asset/dist/sweetalert.css">
   <link rel="stylesheet" href="../asset/css/login.css">
+  <link rel="stylesheet" href="../asset/css/index.css">
   <link rel="stylesheet" type="text/css" href="../asset/pink/pace-theme-flash.css">
 </head>
 

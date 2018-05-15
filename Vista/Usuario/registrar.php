@@ -11,6 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="../asset/pink/pace-theme-flash.css">
 	<!-- Carga asincronida media="none" onload="if(media!='all')media='all'"-->
 	<link rel="stylesheet" href="../asset/css/login.css">
+	<link rel="stylesheet" href="../asset/css/index.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
