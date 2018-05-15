@@ -54,7 +54,7 @@ $postres = ProductosController::getPostresControllers();
             </div>
 
 <?php endforeach ?>
-
+<h2>hola</h2>
 
     </div>
 </div>
