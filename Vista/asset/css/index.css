@@ -176,6 +176,14 @@ nav ul li.link:hover {
   color: #fff;
 }
 
+.page-footer#footerContainer {
+  background: linear-gradient(to right, #ffffff, #d3a5b6);
+}
+
+.container#colorDerechos {
+  color: #d81b60;
+}
+
 /* .video-responsive {
 position: relative;
 padding-bottom: 56.25%;

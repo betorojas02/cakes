@@ -119,7 +119,7 @@
    <!-- cierra de container principal -->
 </div>
           </main>       
-<footer class="page-footer">
+          <footer class="page-footer" id="footerContainer">
           <?php include("navbar/footer.php"); ?>
     </footer>                        
          <div id="modal2" class="modal fixed-footer trans-card z-depth-4">
