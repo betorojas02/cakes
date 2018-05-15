@@ -8,11 +8,7 @@
                 </h5>
               </div>
               <div class="col l4 offset-l2 s12">
-<<<<<<< HEAD
-                <h5 class="white-text">Contáctanos</h5>
-=======
                 <h5 class="pink-text">Contactanos</h5>
->>>>>>> master
                 <ul>
                 <i class="material-icons">camera_alt</i>
                   <li><a class="white-text text-lighten-3" href="https://www.instagram.com/lb__cakes/?hl=es-la">@lb_cakes</a></li>
