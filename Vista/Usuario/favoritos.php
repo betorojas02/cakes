@@ -20,9 +20,8 @@ session_start();
 <main>
  <?php include 'navbar/navbarUsuario.php';?>
 
-    
 
-</div>
+
 </main>
 <footer class="page-footer" id="footerContainer">
  <?php include("navbar/footer.php"); ?>
