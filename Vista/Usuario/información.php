@@ -59,7 +59,7 @@ session_start();
 
 </div>
 </main>
-<footer class="page-footer">
+<footer class="page-footer" id="footerContainer">
  <?php include("navbar/footer.php"); ?>
  </footer>
 
