@@ -1,6 +1,7 @@
 <?php
 
 include_once('../../Controlador/ProductoControlador.php');
+
 $obj=new ProductosController();
 $productos=$obj->getProductosControllers();
 $totalP =$obj->ProductosC();
@@ -80,10 +81,11 @@ session_start();
               <i class="material-icons" id="adds">add</i>
             </a></span>
             <div class="input-field ">
+            <?php  $code = $pro['id_producto']; ?>
 						<label>Cantidad</label>
-						<input  class="validate" type="number"  id="cantidad" value="1"  min="1"  >
+						<input  class="validate" type="number"  id="<?PHP echo $code ?>" value="1"  min="1"  >
 					</div>
-          <?php  $code = $pro['id_producto']; ?>
+          
           <a class="waves-effect waves-light btn pink darken-1"   onClick="addProduct(<?PHP echo $code ?>);">Agregar Carrito</a>
             <!-- <p><a href="datosUsuario.php#carritoCompras" id="linkCarritoProducto"><h5>Agregar al carrito</h5></a></p> -->
           </div>

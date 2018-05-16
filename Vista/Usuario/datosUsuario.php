@@ -1,7 +1,21 @@
   <?php
    require_once "../../Controlador/UsuarioControlador.php";
    require_once "../../include/session.php"; 
+   require_once "../../Controlador/cartControlador.php";
 
+   $cart = new Cart();
+   if(isset($_GET['action'])){
+     switch ($_GET['action']){
+       case 'add':
+         $cart->add_item($_GET['code'], $_GET['amount']);
+       break;
+       case 'remove':
+         $cart->remove_item($_GET['code']);
+       break;
+     }
+   }
+   $hola = $_GET['amount'];
+   echo $hola;
 
   $id =  $_SESSION["usuario"]["id_usuario"];
   // $usu = new UsuarioControlador();
@@ -104,7 +118,30 @@
         <div id="carritoCompras">
   
             <div class="row" id="datos">
-              
+           
+	<table border="1px" cellpadding="5px" width="100%">
+			<thead class="cartHeader" display="off">
+				<tr>
+					<th colspan="6">MI CARRITO DE COMPRAS</th>
+				</tr>
+				<tr>
+					<th colspan="3">Total pagar: <?=$cart->get_total_payment();?></th>
+					<th colspan="3">Total items: <?=$cart->get_total_items();?></th>
+				</tr>
+			</thead>
+			<tbody class="cartBody">
+				<tr>
+					<th>Codigo</th>
+					<th>Producto</th>
+					<th>Precio</th>
+		
+				</tr>
+				<?=$cart->get_items();?>
+			</tbody>
+		</table>
+
+				<!-- Producto -->
+				<a href="index.php" class="waves-effect waves-light btn-large">Regresar a la tienda</a>
        
             </div>
   

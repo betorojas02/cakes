@@ -4,7 +4,13 @@ require_once 'Conexion.php';
 
 class ProductosModel extends Conexion
 {
+  public $code;
+  public $product;
+  public $description;
+  public $price;
 
+
+  
   public static $cnx;
 
   private static function getConexion()
@@ -141,6 +147,26 @@ class ProductosModel extends Conexion
              $resultado->execute();
 
              return true;
+        }
+
+
+        public function buscar_code($code){
+          $sql = "SELECT * FROM producto WHERE id_producto = :id_producto"; 
+          self::getConexion();
+          $resultado = self::$cnx->prepare($sql);
+          $resultado->bindParam(":id_producto", $code );
+          $resultado->execute();
+          $resultado->fetchAll();      
+          $product = $resultado->fetchAll(); 
+          $status = 0;
+          foreach ($product as $key){
+           $this->code = $key['id_producto'];
+           $this->product = $key['nombre'];
+           $this->description = $key['descripcion'];
+           $this->price = $key['precio'];
+           $status++;
+         }
+         return $status;
         }
 }
   
