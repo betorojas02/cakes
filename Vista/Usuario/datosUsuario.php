@@ -14,8 +14,7 @@
        break;
      }
    }
-   $hola = $_GET['amount'];
-   echo $hola;
+
 
   $id =  $_SESSION["usuario"]["id_usuario"];
   // $usu = new UsuarioControlador();
@@ -134,6 +133,8 @@
 					<th>Codigo</th>
 					<th>Producto</th>
 					<th>Precio</th>
+          <th>Cantidad</th>
+          <th>Subtotal</th>
 		
 				</tr>
 				<?=$cart->get_items();?>
