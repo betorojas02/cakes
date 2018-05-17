@@ -14,6 +14,9 @@ class cart extends ProductosModel {
 
 	    public function add_item($code, $amount){
 			$search = $this->buscar_code($code);
+			echo "<script>console.log( 'CODE cont: " . $code . "' );</script>";
+         	echo "<script>console.log( 'AMOUNT cont: " . $amount . "' );</script>";
+         	echo "<script>console.log( 'SEARCH cont: " . $search . "' );</script>";
 			if($search > 0){
                
 				$code = $this->code;
@@ -39,8 +42,8 @@ class cart extends ProductosModel {
 		}
 
 		public function remove_item($code){
-			$id = md5($code);
-			unset($_SESSION['cart'][$id]);
+		
+			unset($_SESSION['cart'][$code]);
 			$this->update_cart();
 			return true;
 		}

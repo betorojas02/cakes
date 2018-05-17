@@ -156,10 +156,16 @@ class ProductosModel extends Conexion
           $resultado = self::$cnx->prepare($sql);
           $resultado->bindParam(":id_producto", $code );
           $resultado->execute();
-          $resultado->fetchAll();      
-          $product = $resultado->fetchAll(); 
+          $cont = json_encode($resultado);
+          echo "<script>console.log( 'KEY cont: ".$cont."' );</script>";            
+          
+          $resultado = $resultado->fetchAll();
+          $cont = json_encode($resultado);          
+          echo "<script>console.log( 'KEY cont: ".$cont."' );</script>";            
+          
           $status = 0;
-          foreach ($product as $key){
+          foreach ($resultado as $key){
+          echo "<script>console.log( 'KEY cont: 1' );</script>";            
            $this->code = $key['id_producto'];
            $this->product = $key['nombre'];
            $this->description = $key['descripcion'];
