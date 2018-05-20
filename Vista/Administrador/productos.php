@@ -42,24 +42,26 @@ else
                 </tr>
 
               <?php
-                include '../../Controlador/ProductoControlador.php';
+                include '../../Controlador/ProductoControladoor.php';
 
-                $resultado = ProductosController::getProductosControllers();
+                $resultado = ProductoControlador::getProductos();
 
-              foreach ($resultado as $filas)
+                While ($filas =  $resultado->fetch())
                 {
                   echo "<tr>";
                 //  echo "<td style='padding:20px;'>";  echo "$filas[id_producto]";  echo "</td>";
-                  echo "<td style='padding:20px;'>";  echo "$filas[id_tipo]";  echo "</td>";
+                  echo "<td style='padding:20px;'>";  echo "$filas[nombre_tipo]";  echo "</td>";
                   echo "<td style='padding:20px;'>";  echo "$filas[nombre]";  echo "</td>";
                   echo "<td style='padding:20px;'>";  echo "$filas[descripcion]";  echo "</td>";
                   echo "<td style='padding:20px;'>";  echo "$filas[precio]";  echo "</td>";
-                  echo "<td style='padding:20px;'>";  echo "$filas[estado]";  echo "</td>";
+                  echo "<td style
+
+                  ='padding:20px;'>";  echo "$filas[estado]";  echo "</td>";
                   echo "<td style='padding:20px;'>";  echo "$filas[calificacion]";  echo "</td>";
                   echo "<td style='padding:20px;'>";  echo "<img src='".$filas['imagen']."'  width='100px' heigth='200px'>";  echo "</td>";
                   echo "<td style='padding:20px;'>";  echo "$filas[votos]";  echo "</td>";
-
-                  echo "<td style='padding:20px;' > <span class='glyphicon glyphicon-pencil'></span>  <button id='ed' class='mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-color--pink-A100'>Editar</button></a> </td>";
+                  echo "<td style='padding:20px;' > <a id='editI' data-toggle='modal' data-target='#dialog' class='mdl-button mdl-js-button mdl-button--raised mdl-js-button mdl-button--accent mdl-color--pink-A100'>Editar</a> </td>";
+                  //echo "<td style='padding:20px;' > <span class='glyphicon glyphicon-pencil'></span>  <button id='ed' class='mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-color--pink-A100'>Editar</button></a> </td>";
                   echo "<td style='padding:20px;' > <a class='btn btn-danger' href='eliminaP.php?i2=".$filas['id_producto']."'> <button class='mdl-button show-modal mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-color--pink-A100'>Eliminar</button></a> </td>";
                   echo "</tr>";
                 }
@@ -127,6 +129,47 @@ else
 
 
 
+ <dialog id="dialog" class="mdl-dialog">
+
+  <div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4>Editar Ingrediente</h4>
+    </div>
+    <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+       <form action="actualiza.php" method="POST">
+
+             <input  id="id" name="id" type="hidden" ></input>
+              <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input class="form-control" id="nombre" name="nombre" type="text" ></input>
+              </div>
+              <div class="form-group">
+                <label for="precio">Precio:</label>
+                <input class="form-control" id="cantidad" name="precio" type="text" ></input>
+              </div>
+              <div class="form-group">
+                <label for="cantidad">Cantidad:</label>
+                <input class="form-control" id="cantidad" name="cantidad" type="text" ></input>
+              </div>
+              <div class="form-group">
+                 <label for="proveedor">Proveedor:</label>
+                 <input class="form-control" id="proveedor" name="proveedor" type="text" ></input>
+               </div>
+
+   <input type="submit" class="mdl-button mdl-js-button  btn-success">
+       </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+    </div>
+  </div>
+  </div>
+
+
+ </dialog>
+
 
            <script>
            var dialog = document.querySelector('#Nuevo');
@@ -141,6 +184,23 @@ else
              dialog.close();
            });
 
+
+           (function() {
+             'use strict';
+             var dialogButton = document.querySelector('#editI');
+             var dialog = document.querySelector('#dialog');
+             if (! dialog.showModal) {
+               dialogPolyfill.registerDialog(dialog);
+             }
+             dialogButton.addEventListener('click', function() {
+               dialog.showModal();
+            });
+           dialog.querySelector('button:not([disabled])')
+           .addEventListener('click', function() {
+           dialog.close();
+           });
+
+         }());
 
 
            </script>
