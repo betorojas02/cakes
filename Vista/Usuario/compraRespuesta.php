@@ -3,16 +3,22 @@ require_once "../../Controlador/DetallePedidoControlador.php";
  require_once "../../include/session.php"; 
  require_once ('../../Controlador/cartControlador.php');
 
+
+ $id =  $_SESSION["usuario"]["id_usuario"];
+ $nombre = $_SESSION["usuario"]["nombre"];
+ $fechaP = date("d-m-Y");
+ $lapPaymentMethod = $_REQUEST['lapPaymentMethod'];
 if(isset($_SESSION['cart'])){
 
 $item = $_SESSION['cart'];
 foreach($item as $i){
 
-
-
     $code=$i['code'];
+    $precio = $i['price'];
+    $cantidad = $i['amount'];
+    $total = ($precio*$cantidad);
 
-     $datos = DetallePedidoControlador::pedidosC($code);
+     $datos = DetallePedidoControlador::pedidosC($code,$id,$precio,$cantidad,$total,$fechaP,$nombre,$lapPaymentMethod);
 
 echo $datos;
 }

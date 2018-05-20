@@ -23,7 +23,7 @@ session_start();
 
 
 </main>
-<footer class="page-footer" id="footerContainer">
+    <footer class="page-footer" id="footerContainer">
  <?php include("navbar/footer.php"); ?>
  </footer>
   <!--  script jquery  -->
