@@ -51,7 +51,7 @@ else
                   echo "<td style='padding:20px;'>";  echo "$filas[precio]";  echo "</td>";
                   echo "<td style='padding:20px;'>";  echo "$filas[cantidad]";  echo "</td>";
                   echo "<td style='padding:20px;'>";  echo "$filas[nombre_empresa]";  echo "</td>";
-                  echo "<td style='padding:20px;' > <a id='editI' data-toggle='modal' data-target='#dialog' data-id='" .$filas['id_ingrediente'] ."' data-nombre='" .$filas['nombre_ingrediente'] ."' data-precio='" .$filas['precio'] ."' data-cantidad='" .$filas['cantidad']."' data-proveedor='" .$filas['nombre_empresa'] ."' class='mdl-button mdl-js-button mdl-button--raised mdl-js-button mdl-button--accent mdl-color--pink-A100'>  Editar</a> </td>";
+                  echo "<td style='padding:20px;' > <a class='btn btn-danger' class='editacion' id='editI'>  <button class='mdl-button show-modal mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-color--pink-A100'>  Editar </button> </a> </td>";
                   echo "<td style='padding:20px;' > <a class='btn btn-danger' href='eliminaI.php?i2=".$filas['id_ingrediente']."'> <button class='mdl-button show-modal mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-color--pink-A100'>Eliminar</button></a> </td>";
                   echo "</tr>";
                 }
@@ -182,13 +182,13 @@ else
 
 
 						 	(function() {
-               'use strict';
-               var dialogButton = document.querySelector('#editI');
+
+               var dialogButton = document.querySelector('.editacion');
                var dialog = document.querySelector('#dialog');
                if (! dialog.showModal) {
                  dialogPolyfill.registerDialog(dialog);
                }
-               dialogButton.addEventListener('click', function() {
+               document.querySelector('.editacion').addEventListener('click', function() {
                  dialog.showModal();
     			 		 });
     					dialog.querySelector('button:not([disabled])')
@@ -197,6 +197,7 @@ else
     					});
 
   					}());
+
            </script>
 
 
