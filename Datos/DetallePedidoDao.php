@@ -43,6 +43,19 @@ class DetallePedidoDao extends Conexion
 
 
     }
+    
+    public static function pedidoM($code)
+    {
+     $sql = "INSERT INTO detallepedido (item,id_pedido,id_producto,precio_unidad,cantidad,precio_total,descuento)
+                                VALUES(1,3,:id_producto,4,5,6,7)";
+                self::getConexion();
+                $resultado = self::$cnx->prepare($sql);
+                 $resultado->bindParam(":id_producto", $code);
+             
+
+                $resultado->execute();
+     
+    }
 
 
  

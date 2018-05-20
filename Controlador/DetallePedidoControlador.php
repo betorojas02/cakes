@@ -13,6 +13,11 @@ class DetallePedidoControlador
    
     }
 
+    public static function pedidosC($code){
+
+        $respuesta = DetallePedidoDao::pedidoM($code);
+    }
+
   }
 
  ?>
