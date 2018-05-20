@@ -64,11 +64,18 @@ class cart extends ProductosModel {
 				                    	Eliminar
 				                    </button>
 								</td>	
+
+								
+								
+							
 							  </tr>';
 				}
 	    	}
 	    	return $html;
-	    }
+		}
+		
+
+	
 
 	    public function get_total_items(){
 	    	$total = 0;
@@ -87,7 +94,7 @@ class cart extends ProductosModel {
 					$total += $key['subtotal'];
 				}
 	    	}
-	    	return number_format($total, 2);
+	    	return $total;
 	    }
 
 		public function update_cart(){

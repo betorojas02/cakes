@@ -1,3 +1,8 @@
 #datos {
   background-color: #ffffff;
 }
+
+img.pequeña {
+  width: 50px;
+  height: 50px;
+}

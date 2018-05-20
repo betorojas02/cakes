@@ -36,7 +36,7 @@ if($emailr > 0){
       //Recipients
       $mail->setFrom('lbcakes1234@gmail.com', 'L&B CAKES');
       $mail->addAddress($correo, 'beto');     // Add a recipient
-      $url = 'http://'.$_SERVER["SERVER_NAME"].'/cakess/vista/login/recuperar.php?user_id='.$id;
+      $url = 'http://'.$_SERVER["SERVER_NAME"].'/cakes/vista/login/recuperar.php?user_id='.$id;
 
       $click = $url;
 
