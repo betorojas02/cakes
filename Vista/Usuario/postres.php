@@ -24,6 +24,7 @@ $postres = ProductosController::getPostresControllers();
     <div class="container">
         <div class="row">
 
+<?php if($postres > 0) {?>
         <?php 
             foreach($postres as $po):
                 ?>
@@ -32,7 +33,7 @@ $postres = ProductosController::getPostresControllers();
 
             <div class="card">
             <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src="<?php echo $pro['imagen']; ?>">
+                <img class="activator" src="<?php echo $po['imagen']; ?>">
             </div>
                 <!-- <a class="add-btn-flt btn btn-floating pink darken-1">
                     <i class="material-icons ">add</i>
@@ -54,7 +55,20 @@ $postres = ProductosController::getPostresControllers();
             </div>
 
 <?php endforeach ?>
-
+<?php }else {?>
+    <br>
+          <br>
+          <br>
+  <div class="container">
+    <div class="row">
+                <div class="center">
+                  <div class="card-panel  pink darken-1" id="np">
+                  Productos agotado
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+    <?php }?>
 
     </div>
 </div>
