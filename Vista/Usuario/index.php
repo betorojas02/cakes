@@ -67,11 +67,11 @@ session_start();
       foreach ($productos as $pro):
         // code..
        ?>
-      <div class="col s12 m6 l3">
+      <div class="col s12 m7 l3">
 
         <div class="card">
           <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="<?php echo $pro['imagen']; ?>">
+            <img  class="activator" src="<?php echo $pro['imagen']; ?>">
           </div>
               <!-- <a class="add-btn-flt btn btn-floating pink darken-1">
                 <i class="material-icons ">add</i>
