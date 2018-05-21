@@ -41,6 +41,20 @@ class ProductoControlador
        ProductosDAO::eliminarPro($obj_ingre);
     }
 
+    public static function prodModoPago()
+    {
+      $respuesta = ProductosDAO::getProModoPago();
+
+      return $respuesta;
+    }
+
+    public static function ventasXCliete()
+    {
+      $respuesta = ProductosDAO::getventasXCliete();
+
+      return $respuesta;
+    }
+
   }
 
  ?>

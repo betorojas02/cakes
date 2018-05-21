@@ -94,7 +94,7 @@ class ProductosDAO extends Conexion
           $sql = "UPDATE producto SET estado = :estado  where id_producto = :id  ";
           self::getConexion();
 
-        
+
 
             $resultado = self::$cnx->prepare($sql);
 
@@ -108,6 +108,34 @@ class ProductosDAO extends Conexion
              $resultado->execute();
 
              return true;
+        }
+
+
+        public static function getProModoPago()
+        {
+            $sql = "SELECT nombre,count(*) AS total  from modopago, pedido
+            where pedido.id_modopago=modopago.id_modo_pago
+            group by (nombre);";
+
+             self::getConexion();
+
+             $resultado = self::$cnx->prepare($sql);
+             $resultado->execute();
+             return $resultado->fetchAll();
+        }
+
+
+        public static function getventasXCliete()
+        {
+          $sql = "SELECT nombre_usuario2, apellido_usuario2, sum(precio_total) as total
+          from detallepedido INNER JOIN pedido ON detallepedido.id_pedido = pedido.id_pedido
+          group by (nombre_usuario2, apellido_usuario2);";
+
+          self::getConexion();
+
+          $resultado = self::$cnx->prepare($sql);
+          $resultado->execute();
+          return $resultado->fetchAll();
         }
 }
 
