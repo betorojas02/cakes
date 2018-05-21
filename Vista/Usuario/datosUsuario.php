@@ -17,6 +17,7 @@
 
 
   $id =  $_SESSION["usuario"]["id_usuario"];
+
   // $usu = new UsuarioControlador();
   $usuarios = UsuarioControlador::usuLC($id);
 
@@ -136,24 +137,27 @@
 					<th>Precio</th>
           <th>Cantidad</th>
           <th>Subtotal</th>
+          <th>Boton Eliminar</th>
 		
 				</tr>
 				<?=$cart->get_items();?>
    
 			</tbody>
 		</table>
-    
-
-
-
+    <br>
+    <div class="center">
+<div class="row">
+<a href="index.php" class="waves-effect waves-light btn-large pink">Regresar a la tienda</a>
+    </div>
+</div>
+</div>
 <?php 
  if(!empty($_SESSION['cart'])){
-   echo "nada";
 
    ?>
-   				<a href="index.php" class="waves-effect waves-light btn-large pink">Regresar a la tienda</a>
+   				
                 
-                </div>
+          
               <div class="row">
           <?php 
           $key ="4Vj8eK4rloUd272L48hsrarnUA";
@@ -162,12 +166,8 @@
            $referenceCode=date("d-m-Y h:i:s");
            $amount=$cart->get_total_payment();
            $currency="COP";
-               
+            $correo =  $_SESSION["usuario"]["correo"];
           $ding = md5($key."~".$merchantId."~".$referenceCode."~".$amount."~".$currency);
-          $valor ="0be8eb923b9e95e35efbb43d9c0f3cb0";
-          echo $ding;
-          echo "<br>";
-          echo $amount;
           $url = 'http://'.$_SERVER["SERVER_NAME"].'/cakes/vista/usuario/compraRespuesta.php';
            ?>
             <form method="post" action="https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/">
@@ -179,12 +179,12 @@
       <input name="tax"           type="hidden"  value=""
       <input name="taxReturnBase" type="hidden"  value="2">
       <input name="currency"      type="hidden"  value="<?php echo $currency?>">
-      <input name="signature"     type="hidden"  value="<?php  echo $ding ?>">**
+      <input name="signature"     type="hidden"  value="<?php  echo $ding ?>">
       <input name="test"          type="hidden"  value="1">
-      <input name="buyerEmail"    type="hidden"  value="elcdbetorojas@gmail.com" >
+      <input name="buyerEmail"    type="hidden"  value="<?php echo $correo?>" >
      <input name="responseUrl"    type="hidden"  value="<?php echo $url ?>" >
-      <input name="confirmationUrl"    type="hidden"  value="http://www.test.com/confirmation" > -->
-      <input name="Submit"        type="submit"  value="Enviar" >
+      <!-- <input name="confirmationUrl"    type="hidden"  value="http://www.test.com/confirmation" >  -->
+      <button class="btn waves-effect waves-light pink" name="Submit" type="submit"  value="Realizar Compra" > Realizar Compra</button>
     </form>
  <?php
   }

@@ -24,7 +24,10 @@ $dulces = ProductosController::getDulcesControllers();
 
     <div class="container">
         <div class="row">
+<?php if($dulces > 0){
 
+
+ ?>
         <?php
 foreach ($dulces as $du):
 ?>
@@ -55,8 +58,20 @@ foreach ($dulces as $du):
             </div>
 
 <?php endforeach?>
-
-
+<?php }else {?>
+    <br>
+          <br>
+          <br>
+  <div class="container">
+    <div class="row">
+                <div class="center">
+                  <div class="card-panel  pink darken-1" id="np">
+                  Productos agotado
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+    <?php }?>
     </div>
 </div>
 </main>

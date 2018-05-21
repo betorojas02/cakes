@@ -41,7 +41,11 @@ class ProductosModel extends Conexion
          self::getConexion();
          $resultado = self::$cnx->prepare($sql);
          $resultado->execute();
+         
+         if($resultado -> rowCount() > 0){
          return $resultado->fetchAll();
+         }
+         return false;
     }
 
     public static function postresModel()
@@ -51,8 +55,10 @@ class ProductosModel extends Conexion
          self::getConexion();
          $resultado = self::$cnx->prepare($sql);
          $resultado->execute();
-         return $resultado->fetchAll();
-
+         if($resultado -> rowCount() > 0){
+          return $resultado->fetchAll();
+          }
+          return false;
     
 
     }
@@ -64,7 +70,10 @@ class ProductosModel extends Conexion
          self::getConexion();
          $resultado = self::$cnx->prepare($sql);
          $resultado->execute();
-         return $resultado->fetchAll();
+         if($resultado -> rowCount() > 0){
+          return $resultado->fetchAll();
+          }
+          return false;
 
     
 
@@ -77,7 +86,10 @@ class ProductosModel extends Conexion
       self::getConexion();
       $resultado = self::$cnx->prepare($sql);
       $resultado->execute();
-      return $resultado->rowCount();
+      if($resultado -> rowCount() > 0){
+        return $resultado->fetchAll();
+        }
+        return false;
  
     }
 

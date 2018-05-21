@@ -24,6 +24,8 @@ $pasteles = ProductosController::getPastelesControllers();
 
     <div class="container">
         <div class="row">
+<?php if($pasteles > 0){?>
+
 
         <?php
 foreach ($pasteles as $pa):
@@ -55,7 +57,20 @@ foreach ($pasteles as $pa):
             </div>
 
 <?php endforeach?>
-
+<?php }else {?>
+    <br>
+          <br>
+          <br>
+  <div class="container">
+    <div class="row">
+                <div class="center">
+                  <div class="card-panel  pink darken-1" id="np">
+                  Productos agotado
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+    <?php }?>
 
     </div>
 </div>

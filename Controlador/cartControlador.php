@@ -60,7 +60,7 @@ class cart extends ProductosModel {
 								<td align="right">'.$key['amount'].'</td>
 								<td align="right">'.number_format($key['subtotal'], 2).'</td>
 								<td>
-									<button onClick="deleteProduct('.$code.');">
+									<button class="btn waves-effect waves-light  red darken-4" onClick="deleteProduct('.$code.');">
 				                    	Eliminar
 				                    </button>
 								</td>	
