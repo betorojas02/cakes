@@ -83,8 +83,15 @@ else
             series: [{
                 name: 'Modos de pago',
                 data: [
-                    { name: 'Chrome', y: 61.41 },
-                  
+                  <?php
+                  include_once '../../Controlador/ProductoControladoor.php';
+                  $resultado = ProductoControlador::prodModoPago();
+                  foreach ($resultado as $res):
+                  ?>
+                    { name: '<?php echo $res['nombre']; ?>', y: <?php echo $res['total']; ?> },
+                          <?php endforeach ?>
+
+
                 ]
             }]
         });
@@ -92,27 +99,163 @@ else
 
 
 
-            <svg fill="currentColor" width="200px" height="200px" viewBox="0 0 1 1" class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop">
-              <use xlink:href="#piechart" mask="url(#piemask)">
-              <text x="0.5" y="0.5" font-family="Roboto" font-size="0.3" fill="#888" text-anchor="middle" dy="0.1">82<tspan dy="-0.07" font-size="0.2">%</tspan></text>
-            </svg>
-            <svg fill="currentColor" width="200px" height="200px" viewBox="0 0 1 1" class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop">
-              <use xlink:href="#piechart" mask="url(#piemask)">
-              <text x="0.5" y="0.5" font-family="Roboto" font-size="0.3" fill="#888" text-anchor="middle" dy="0.1">82<tspan dy="-0.07" font-size="0.2">%</tspan></text>
-            </svg>
+
+
+
+
             <svg fill="currentColor" width="200px" height="200px" viewBox="0 0 1 1" class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop">
               <use xlink:href="#piechart" mask="url(#piemask)">
               <text x="0.5" y="0.5" font-family="Roboto" font-size="0.3" fill="#888" text-anchor="middle" dy="0.1">82<tspan dy="-0.07" font-size="0.2">%</tspan></text>
             </svg>
           </div>
-          <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--8-col">
-            <svg fill="currentColor" viewBox="0 0 500 250" class="demo-graph">
-              <use xlink:href="#chart">
-            </svg>
-            <svg fill="currentColor" viewBox="0 0 500 250" class="demo-graph">
-              <use xlink:href="#chart">
-            </svg>
+
+          <!--<div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--8-col">-->
+            <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+            <div id="cliente" style="min-width: 510px; height: 400px; margin: 0 auto"></div>
+
+          <script type="text/javascript">
+
+                  // Create the chart
+                  Highcharts.chart('cliente', {
+                      chart: {
+                          type: 'column'
+                      },
+                      title: {
+                          text: 'Reporte ventas por cliente'
+                      },
+                      subtitle: {
+                          text: 'Click the columns to view versions. Source: <a href="http://statcounter.com" target="_blank">statcounter.com</a>'
+                      },
+                      xAxis: {
+                          type: 'category'
+                      },
+                      yAxis: {
+                          title: {
+                              text: 'Cantidad'
+                          }
+
+                      },
+                      legend: {
+                          enabled: false
+                      },
+                      tooltip: {
+
+                          pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}</b> ({point.percentage:.0f}%) of total<br/>',
+                          shared: true
+
+                      },
+                      plotOptions: {
+
+                          series: {
+                              borderWidth: 0,
+                              dataLabels: {
+                                  enabled: true,
+                                  format: '${point.y:.0f}'
+                              }
+                          }
+                      },
+
+
+
+                      "series": [
+                          {
+                              "name": "Browsers",
+                              "colorByPoint": true,
+                              "data": [
+
+                                <?php
+                                include_once '../../Controlador/ProductoControladoor.php';
+                                $resultado = ProductoControlador::ventasXCliete();
+                                foreach ($resultado as $res):
+                                ?>
+                                  { "name": '<?php echo $res['nombre_usuario2']." ". $res['apellido_usuario2']; ?>',
+                                    "y": <?php echo $res['total']; ?>,
+                                    "drilldown": '<?php echo $res['nombre_usuario2']." ". $res['apellido_usuario2']; ?>'
+
+                                  },
+                                        <?php endforeach ?>
+
+                              ]
+                          }
+                      ],
+
+                  });
+                  		</script>
+
+                      <div id="porcentajeVentas" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+                    <script type="text/javascript">
+
+
+                    // Make monochrome colors
+                    var pieColors = (function () {
+                        var colors = [],
+                            base = Highcharts.getOptions().colors[0],
+                            i;
+
+                        for (i = 0; i < 10; i += 1) {
+                            // Start out with a darkened base color (negative brighten), and end
+                            // up with a much brighter color
+                            colors.push(Highcharts.Color(base).brighten((i - 3) / 7).get());
+                        }
+                        return colors;
+                    }());
+
+                    // Build the chart
+                    Highcharts.chart('porcentajeVentas', {
+                        chart: {
+                            plotBackgroundColor: null,
+                            plotBorderWidth: null,
+                            plotShadow: false,
+                            type: 'pie'
+                        },
+                        title: {
+                            text: 'Estadistica ventas por cliente'
+                        },
+                        tooltip: {
+                            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                        },
+                        plotOptions: {
+                            pie: {
+                                allowPointSelect: true,
+                                cursor: 'pointer',
+                                colors: pieColors,
+                                dataLabels: {
+                                    enabled: true,
+                                    format: '<b>{point.name}</b><br>{point.percentage:.1f} %',
+                                    distance: -50,
+                                    filter: {
+                                        property: 'percentage',
+                                        operator: '>',
+                                        value: 4
+                                    }
+                                }
+                            }
+                        },
+                        series: [{
+                            name: 'Porcenaje de ventas',
+                            data: [
+
+
+
+                                      <?php
+                                      include_once '../../Controlador/ProductoControladoor.php';
+                                      $resultado = ProductoControlador::ventasXCliete();
+                                      foreach ($resultado as $res):
+                                      ?>
+                                        { name: '<?php echo $res['nombre_usuario2']." ". $res['apellido_usuario2']; ?>',
+                                          y: <?php echo $res['total']; ?>
+                                        },
+                                              <?php endforeach ?>
+
+                            ]
+                        }]
+                    });
+                      </script>
+
+
           </div>
+
+
           <div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
             <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
               <div class="mdl-card__title mdl-card--expand mdl-color--teal-300">
