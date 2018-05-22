@@ -14,6 +14,7 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortout icon" href="../Diseños/img/logo.png">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="../asset/dist/sweetalert.css">
   <!--  iconos de google-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Compiled and minified CSS -->
@@ -130,6 +131,7 @@ session_start();
   <!--  script funciones index -->
   <script  src="../asset/js/index.js"></script>
 	<script type="text/javascript" src="../asset/js/pace.min.js"></script>
+  <script type="text/javascript" src="../asset/dist/sweetalert.min.js"></script>
 
 
 

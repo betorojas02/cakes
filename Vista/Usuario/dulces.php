@@ -14,6 +14,7 @@ $dulces = ProductosController::getDulcesControllers();
     <title>Document</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" type="text/css" href="../asset/dist/sweetalert.css">
   <link rel="stylesheet" type="text/css" href="../asset/css/materialize.min.css">
 <link rel="stylesheet" href="../asset/css/index.css">
 <link rel="stylesheet" type="text/css" href="../asset/pink/pace-theme-flash.css">
@@ -36,7 +37,7 @@ foreach ($dulces as $du):
 
             <div class="card">
             <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src="<?php echo $pro['imagen'] ?>">
+                <img class="activator" src="<?php echo $du['imagen'] ?>">
             </div>
                 <!-- <a class="add-btn-flt btn btn-floating pink darken-1">
                     <i class="material-icons ">add</i>
@@ -45,7 +46,12 @@ foreach ($dulces as $du):
                 <span class="card-title activator grey-text text-darken-4"><?php echo $du['nombre']; ?><a class="add-btn-flt btn btn-floating pink darken-1">
                 <i class="material-icons" id="adds">add</i>
                 </a></span>
-                <p><a href="#!" id="linkCarritoProducto"><h5>Agregar al carrito</h5></a></p>
+                <div class="input-field ">
+            <?php  $code = $du['id_producto']; ?>
+						<label>Cantidad</label>
+						<input  class="validate" type="number"  id="<?PHP echo $code ?>" value="1"  min="1"  >
+					</div>
+            <a class="waves-effect waves-light btn pink darken-1"   onClick="addProduct(<?PHP echo $code ?>);">Agregar Carrito</a>
             </div>
             <div class="card-reveal">
                 <span class="card-title grey-text text-darken-4">Postre<i class="material-icons right">close</i></span>
@@ -87,6 +93,7 @@ foreach ($dulces as $du):
   <!--  script funciones index -->
   <script  src="../asset/js/index.js"></script>
   <script type="text/javascript" src="../asset/js/pace.min.js"></script>
+  <script type="text/javascript" src="../asset/dist/sweetalert.min.js"></script>
 
 </body>
 </html>
