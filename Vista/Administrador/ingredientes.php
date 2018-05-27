@@ -51,7 +51,7 @@ else
                   echo "<td style='padding:20px;'>";  echo "$filas[precio]";  echo "</td>";
                   echo "<td style='padding:20px;'>";  echo "$filas[cantidad]";  echo "</td>";
                   echo "<td style='padding:20px;'>";  echo "$filas[nombre_empresa]";  echo "</td>";
-                  echo "<td style='padding:20px;' > <a class='btn btn-danger' class='editacion' id='editI'>  <button class='mdl-button show-modal mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-color--pink-A100'>  Editar </button> </a> </td>";
+                  echo "<td style='padding:20px;' > <a class='btn btn-danger' class='editacion' id='editI'  href='#dialogo'>  <button class='mdl-button show-modal mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-color--pink-A100'>  Editar </button> </a> </td>";
                   echo "<td style='padding:20px;' > <a class='btn btn-danger' href='eliminaI.php?i2=".$filas['id_ingrediente']."'> <button class='mdl-button show-modal mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-color--pink-A100'>Eliminar</button></a> </td>";
                   echo "</tr>";
                 }
@@ -121,7 +121,61 @@ else
 
 
 
-<dialog id="dialog" class="mdl-dialog">
+
+
+
+
+
+
+
+           <script>
+             var dialog = document.querySelector('#Nuevo');
+             var showModalButton = document.querySelector('#new');
+             if (! dialog.showModal) {
+               dialogPolyfill.registerDialog(dialog);
+             }
+             showModalButton.addEventListener('click', function() {
+               dialog.showModal();
+             });
+             dialog.querySelector('.close').addEventListener('click', function() {
+               dialog.close();
+             });
+
+
+						//  	(function() {
+						//
+            //    var dialogButton = document.querySelector('.editacion');
+            //    var dialog = document.querySelector('#dialog');
+            //    if (! dialog.showModal) {
+            //      dialogPolyfill.registerDialog(dialog);
+            //    }
+            //    document.querySelector('.editacion').addEventListener('click', function() {
+            //      dialog.showModal();
+    			 	// 	 });
+    				// 	dialog.querySelector('button:not([disabled])')
+    				// 	.addEventListener('click', function() {
+      			// 	dialog.close();
+    				// 	});
+						//
+  					// }());
+
+           </script>
+
+
+
+
+      </main>
+    </div>
+    <!--  script jquery  -->
+  	<script type="text/javascript" src="../asset/js/jquery-3.3.1.min.js"></script>
+  	<!-- <script type="text/javascript" src="../asset/js/jquery-1.12.3.js"></script> -->
+    <script type="text/javascript" src="../asset/js/materialize.min.js"></script>
+    <script type="text/javascript" src="../asset/dist/sweetalert.min.js"></script>
+<script type="text/javascript" src="../asset/js/ingrediente.js"></script>
+
+<?php include '../Partials/footer.php'; ?>
+
+<div id="dialogo" class="modal fixed-footer trans-card z-depth-4">
 
  <div class="modal-dialog">
  <div class="modal-content">
@@ -160,56 +214,4 @@ else
  </div>
 
 
-</dialog>
-
-
-
-
-
-
-           <script>
-             var dialog = document.querySelector('#Nuevo');
-             var showModalButton = document.querySelector('#new');
-             if (! dialog.showModal) {
-               dialogPolyfill.registerDialog(dialog);
-             }
-             showModalButton.addEventListener('click', function() {
-               dialog.showModal();
-             });
-             dialog.querySelector('.close').addEventListener('click', function() {
-               dialog.close();
-             });
-
-
-						 	(function() {
-
-               var dialogButton = document.querySelector('.editacion');
-               var dialog = document.querySelector('#dialog');
-               if (! dialog.showModal) {
-                 dialogPolyfill.registerDialog(dialog);
-               }
-               document.querySelector('.editacion').addEventListener('click', function() {
-                 dialog.showModal();
-    			 		 });
-    					dialog.querySelector('button:not([disabled])')
-    					.addEventListener('click', function() {
-      				dialog.close();
-    					});
-
-  					}());
-
-           </script>
-
-
-
-
-      </main>
-    </div>
-    <!--  script jquery  -->
-  	<script type="text/javascript" src="../asset/js/jquery-3.3.1.min.js"></script>
-  	<!-- <script type="text/javascript" src="../asset/js/jquery-1.12.3.js"></script> -->
-    <script type="text/javascript" src="../asset/js/materialize.min.js"></script>
-    <script type="text/javascript" src="../asset/dist/sweetalert.min.js"></script>
-<script type="text/javascript" src="../asset/js/ingrediente.js"></script>
-
-<?php include '../Partials/footer.php'; ?>
+</div>

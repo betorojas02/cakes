@@ -1,9 +1,11 @@
 <?php
-class tipo
+class Tipo
 {
 	private $id_tipo;
 	private $nombre_tipo;
-	
+	private $estado;
+
+
 	public function getId_tipo(){
 		return $this->id_tipo;
 	}
@@ -21,7 +23,17 @@ class tipo
 	}
 
 
-	
+	public function getEstado()
+	{
+		return $this->estado;
+	}
+
+	public function setEstado($estado)
+	{
+		$this->estado=$estado;
+	}
+
+
 
 }
 

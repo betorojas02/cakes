@@ -49,12 +49,6 @@
       <a class="mdl-navigation__link mdl-color-text--brown-800" href="categoriaa.php"><i class="mdl-color-text--brown-800 material-icons" role="presentation">restaurant_menu</i>Categorias</a>
       <a class="mdl-navigation__link mdl-color-text--brown-800" href="perfil.php"><i class="mdl-color-text--brown-800 material-icons" role="presentation">people</i>Perfiles</a>
       <a class="mdl-navigation__link mdl-color-text--brown-800" href="proveedor.php"><i class="mdl-color-text--brown-800 material-icons" role="presentation">contact_phone</i>Proveedores</a>
-      <a class="mdl-navigation__link mdl-color-text--brown-800" href=""><i class="mdl-color-text--brown-800 material-icons" role="presentation">flag</i>Updates</a>
-      <a class="mdl-navigation__link mdl-color-text--brown-800" href=""><i class="mdl-color-text--brown-800 material-icons" role="presentation">local_offer</i>Promos</a>
-      <a class="mdl-navigation__link mdl-color-text--brown-800" href=""><i class="mdl-color-text--brown-800 material-icons" role="presentation">shopping_cart</i>Purchases</a>
-      <a class="mdl-navigation__link mdl-color-text--brown-800" href=""><i class="mdl-color-text--brown-800 material-icons" role="presentation">people</i>Social</a>
-
-
       <div class="mdl-layout-spacer"></div>
       <a class="mdl-navigation__link" href=""><i class="mdl-color-text--brown-800 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
     </nav>

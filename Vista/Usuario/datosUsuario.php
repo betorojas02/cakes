@@ -1,6 +1,6 @@
   <?php
    require_once "../../Controlador/UsuarioControlador.php";
-   require_once "../../include/session.php"; 
+   require_once "../../include/session.php";
    require_once "../../Controlador/cartControlador.php";
 
    $cart = new Cart();
@@ -57,9 +57,9 @@
             <li class="tab col s4 "><a  class="active" href="#carritoCompras">Carrito </a></li>
           </ul>
     </div>
-    
+
       <div id="datosU">
-    
+
           <div class="row" id="datos">
                       <div class="input-field col s6">
                         <input disabled id="Nombre" type="text" class="validate"   value="<?php echo $usua['nombre']; ?>">
@@ -93,7 +93,7 @@
                           <label> Fecha de nacimiento</label>
                           <input disabled  type="text" class="datepicker" id="fecha" required value="<?php echo $usua['fecha_nacimiento']; ?>">
                         </div>
-                              
+
               </div>
                             <center>
 
@@ -101,25 +101,25 @@
                                 <li><a  class="waves-effect waves-light btn modal-trigger pink darken-1" href="#modal2">editar </a></li>
                               </ul>
                             </center>
-                            
+
         </div>
-                          
+
      <!-- fin de tab datosU -->
      <div id="comprasU">
-         
+
           <div class="row" id="datos">
             <?php  include("miscompras.php") ?>
-        
+
 
           </div>
-            
+
         </div>
 
         <div id="carritoCompras">
-  
+
             <div class="row" id="datos">
-         
-              
+
+
 	<table border="1px" cellpadding="5px" width="100%">
 			<thead class="cartHeader" display="off">
 				<tr>
@@ -138,10 +138,10 @@
           <th>Cantidad</th>
           <th>Subtotal</th>
           <th>Boton Eliminar</th>
-		
+
 				</tr>
 				<?=$cart->get_items();?>
-   
+
 			</tbody>
 		</table>
     <br>
@@ -151,15 +151,15 @@
     </div>
 </div>
 </div>
-<?php 
+<?php
  if(!empty($_SESSION['cart'])){
 
    ?>
-   				
-                
-          
+
+
+
               <div class="row">
-          <?php 
+          <?php
           $key ="4Vj8eK4rloUd272L48hsrarnUA";
           $merchantId=508029;
            $accountId=512321;
@@ -189,31 +189,33 @@
  <?php
   }
   ?>
-  
-                 
+
+
 				<!-- Producto -->
 
         </div>
         </div>
 
 
-  
+
    <!-- ciere row -->
    </div>
 
    <!-- cierra de container principal -->
 </div>
-          </main>       
+          </main>
           <footer class="page-footer" id="footerContainer">
           <?php include("navbar/footer.php"); ?>
-    </footer>                        
-         <div id="modal2" class="modal fixed-footer trans-card z-depth-4">
+    </footer>
+
+
+         <div id="modal2" class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
           <div class="modal-content trans-card col s12 ">
             <div class="row" style="padding:5%;overflow:hidden;">
               <form name="registrar" method="post" id="formE" action="" >
                 <br><label><h4>Editar Cuenta:</h4></label>
                 <input disabled type="text" name="id_usuario" id="id_usuario"  style="display:none" required value="<?php echo $_SESSION["usuario"]["id_usuario"];?>  ">
-                
+
                 <div class="input-field col s6 m6 l6">
                   <label>Ciudad</label>
                   <input  class="validate" type="text" name="ciudad" id="ciudad" pattern="[a-z]{1,15}" required value="<?php echo $usua['ciudad']; ?>" >
@@ -245,15 +247,15 @@
             </div>
           </div>
 
-        
+
         </div>
 
 
       <?php  endforeach ?>
 
 
-  
-          
+
+
     <!--  script jquery  -->
     <script type="text/javascript" src="../asset/js/jquery-3.3.1.min.js"></script>
       <!-- Compiled and minified JavaScript -->
