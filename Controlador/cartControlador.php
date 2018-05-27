@@ -11,7 +11,13 @@ class cart extends ProductosModel {
 	    	}
 	    }
 
-
+		/**
+		 * funcion para agregar los item al carrito de compras
+		 *
+		 * @param [type] $code
+		 * @param [type] $amount
+		 * @return void
+		 */
 	    public function add_item($code, $amount){
 			$search = $this->buscar_code($code);
 			echo "<script>console.log( 'CODE cont: " . $code . "' );</script>";
@@ -41,13 +47,23 @@ class cart extends ProductosModel {
 			}
 		}
 
+		/**
+		 * funcion para remover el item del carrito de compras mediante el codigo
+		 *
+		 * @param [type] $code
+		 * @return void
+		 */
 		public function remove_item($code){
 		
 			unset($_SESSION['cart'][$code]);
 			$this->update_cart();
 			return true;
 		}
-
+		/**
+		 * funcion para listar los elementos del carrito de compras
+		 *
+		 * @return $html
+		 */
 	    public function get_items(){
 	    	$html = '';
 	    	if(!empty($this->cart)){
@@ -76,7 +92,11 @@ class cart extends ProductosModel {
 		
 
 	
-
+		/**
+		 * funcion para retornar el total de item del carrito de compras 
+		 *
+		 * @return $total
+		 */
 	    public function get_total_items(){
 	    	$total = 0;
 	    	if(!empty($this->cart)){
@@ -86,7 +106,11 @@ class cart extends ProductosModel {
 	    	}
 	    	return $total;
 	    }
-
+		/**
+		 * funcion para retornar el total de las ventas en el carrito de compras
+		 *
+		 * @return $total
+		 */
 	    public function get_total_payment(){
 	    	$total = 0;
 	    	if(!empty($this->cart)){

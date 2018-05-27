@@ -3,7 +3,11 @@ require_once '../../Datos/ProductoDAO.php';
 
 class ProductosController
 {
-
+    /**
+     * metodo del controlador para traer todos los productos
+     *
+     * @return $respuesta
+     */
     public static function getProductosControllers()
     {
 
@@ -12,7 +16,11 @@ class ProductosController
         return $respuesta;
    
     }
-
+    /**
+     * funccion del controlador para traer todos los pasteles
+     *
+     * @return $respuesta
+     */
     public static function getPastelesControllers()
     {
 
@@ -20,7 +28,11 @@ class ProductosController
         return $respuesta;
    
     }
-
+    /**
+     * metodo del controlador para traer todos los postres
+     *
+     * @return void
+     */
     public static function getPostresControllers()
     {
 
@@ -28,7 +40,11 @@ class ProductosController
         return $respuesta;
    
     }
-
+    /**
+     * metodo del controlador para traer todos los dulces
+     *
+     * @return $respuesta
+     */
     public static function getDulcesControllers()
     {
 
@@ -36,12 +52,25 @@ class ProductosController
         return $respuesta;
    
     }
-
+     /**
+     * metodo del controlador para traer todos los ProductosC
+     *
+     * @return $respuesta
+     */
     public static function ProductosC(){
         $respuesta = ProductosModel::ProductosM();
         return $respuesta;
     }
-
+    /**
+     * metodo controlador para agregar un producto
+     *
+     * @param [type] $nombre
+     * @param [type] $precio
+     * @param [type] $descripcion
+     * @param [type] $tipo
+     * @param [type] $destino
+     * @return $respuesta
+     */
     public static function addProductos($nombre,$precio,$descripcion,$tipo,$destino)
     {
 
@@ -61,7 +90,12 @@ class ProductosController
         return $respuesta;
 
     }
-
+    /**
+     * metodo para eleminar un producto mediante su id
+     *
+     * @param [type] $id
+     * @return void
+     */
     public static function eliminarDatos ($id)
     {
       $obj_ingre = new Producto();

@@ -23,7 +23,11 @@ class ProductosModel extends Conexion
     self::$cnx = null;
   }
 
-
+    /**
+     * Funcion para hacer la consulta de todos los productos
+     *
+     * @return $resultado->fetchAll() 
+     */
     public static function getProductoModel()
     {
         $sql = "SELECT * FROM producto";
@@ -33,7 +37,11 @@ class ProductosModel extends Conexion
          $resultado->execute();
          return $resultado->fetchAll();
     }
-
+    /**
+     * funcion para hacer la consulta de todos los pasteles 
+     *
+     * @return $resultado->fetchAll() si encontra pasteles si no false
+     */
     public static function pastelesModel()
     {
         $sql = "SELECT * FROM producto where id_tipo=1";
@@ -47,7 +55,11 @@ class ProductosModel extends Conexion
          }
          return false;
     }
-
+     /**
+     * funcion para hacer la consulta de todos los postre 
+     *
+     * @return $resultado->fetchAll() si encontra postre si no false
+     */
     public static function postresModel()
     {
         $sql = "SELECT * FROM producto where id_tipo=2";
@@ -62,7 +74,11 @@ class ProductosModel extends Conexion
     
 
     }
-
+     /**
+     * funcion para hacer la consulta de todos los dulces 
+     *
+     * @return $resultado->fetchAll() si encontra dulces si no false
+     */
     public static function dulcesModel()
     {
         $sql = "SELECT * FROM producto where id_tipo=3";
@@ -79,7 +95,11 @@ class ProductosModel extends Conexion
 
     }
    
-
+     /**
+     * funcion para hacer la consulta de todos los productos 
+     *
+     * @return $resultado->fetchAll() si encontra productos si no false
+     */
     public function ProductosM()
     {
       $sql =  "SELECT * FROM producto ";
@@ -93,8 +113,13 @@ class ProductosModel extends Conexion
  
     }
 
-
-       public static function addProductos($producto)
+    /**
+     * funcion para agregar productos 
+     *
+     * @param [object] $producto
+     * @return true = si hace la insercion false = si hubo un error
+     */
+    public static function addProductos($producto)
     {
         $sql = "INSERT INTO producto (descripcion,nombre,precio,estado,calificacion,id_tipo,votos,imagen)
         VALUES (:descripcion,:nombre,:precio,:estado,:calificacion,:id_tipo,:votos,:imagen)";
@@ -161,7 +186,12 @@ class ProductosModel extends Conexion
              return true;
         }
 
-
+        /**
+         * funcion para agregar un producto al carrito de compras mediante su codigo hace la consulta y si encontra un codigo lo agrega
+         *
+         * @param [type] $code
+         * @return $status = con toda la informacion del codigo seleccionado
+         */
         public function buscar_code($code){
           $sql = "SELECT * FROM producto WHERE id_producto = :id_producto"; 
           self::getConexion();

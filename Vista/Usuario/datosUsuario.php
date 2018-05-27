@@ -185,7 +185,7 @@
            $ding = md5($key."~".$merchantId."~".$referenceCode."~".$amount."~".$currency);
            $url = 'http://'.$_SERVER["SERVER_NAME"].'/cakes/vista/usuario/compraRespuesta.php';
            ?>
-              <form method="post" action="https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/">
+              <form method="post" action="https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu">
                 <input name="merchantId" type="hidden" value="<?php echo $merchantId?>">
                 <input name="accountId" type="hidden" value="<?php  echo $accountId?>">
                 <input name="description" type="hidden" value="VENTASCAKES">
@@ -229,9 +229,7 @@
             <label>
               <h4>Editar Cuenta:</h4>
             </label>
-            <input disabled type="text" name="id_usuario" id="id_usuario" style="display:none" required value="<?php echo $_SESSION["
-              usuario "]["id_usuario "];?>  ">
-
+            <input disabled type="text" name="id_usuario" id="id_usuario" style="display:none" required value="<?php echo $_SESSION["usuario"]["id_usuario"];?>  ">
             <div class="input-field col s6 m6 l6">
               <label>Ciudad</label>
               <input class="validate" type="text" name="ciudad" id="ciudad" pattern="[a-z]{1,15}" required value="<?php echo $usua['ciudad']; ?>">
@@ -252,7 +250,7 @@
 
             <div class="center col s12 m12 l12">
               <br>
-              <button class="btn waves-effect waves-light left  pink darken-1" type="submit" id="submit-item" value="add">Enviar
+              <button class="btn waves-effect waves-light left  pink darken-1" type="submit" id="submit-item" value="add">Editar
                 <i class="material-icons right">send</i>
               </button>
             </div>
@@ -281,9 +279,9 @@
     <script type="text/javascript" src="../asset/dist/sweetalert.min.js"></script>
     <!--  script funciones index -->
     <script src="../asset/js/index.js"></script>
-    <script src="../asset/js/datatables.js"></script>
+    
     <script type="text/javascript" src="../asset/js/registro.js"></script>
-    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+
     <script type="text/javascript" src="../asset/js/pace.min.js"></script>
 
 
