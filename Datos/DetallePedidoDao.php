@@ -44,15 +44,16 @@ class DetallePedidoDao extends Conexion
 
     }
     
-    public static function pedidoM($code,$id,$precio,$cantidad,$total,$fechaP,$nombre,$lapPaymentMethod)
+    public static function pedidoM($code,$id,$precio,$cantidad,$total,$fechaP,$nombre,$lapPaymentMethod,$direccion)
     {
 
-      $sql = "INSERT INTO pedido(id_usuario,fecha_pedido,nombre_usuario2) VALUES (:id_usuario,:fecha_pedido,:nombre_usuario2)";
+      $sql = "INSERT INTO pedido(id_usuario,fecha_pedido,nombre_usuario2,dirección_destino) VALUES (:id_usuario,:fecha_pedido,:nombre_usuario2,:dirección_destino)";
       self::getConexion();
       $resultado = self::$cnx->prepare($sql);
       $resultado->bindParam(":id_usuario", $id);
       $resultado->bindParam(":fecha_pedido", $fechaP);
       $resultado->bindParam(":nombre_usuario2", $nombre);
+      $resultado->bindParam(":dirección_destino", $direccion);
       $resultado->execute();
       $lastId = self::$cnx->lastInsertId();
 

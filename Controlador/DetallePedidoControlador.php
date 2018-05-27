@@ -13,9 +13,9 @@ class DetallePedidoControlador
    
     }
 
-    public static function pedidosC($code,$id,$precio,$cantidad,$total,$fechaP,$nombre,$lapPaymentMethod){
+    public static function pedidosC($code,$id,$precio,$cantidad,$total,$fechaP,$nombre,$lapPaymentMethod,$direccion){
 
-        $respuesta = DetallePedidoDao::pedidoM($code,$id,$precio,$cantidad,$total,$fechaP,$nombre,$lapPaymentMethod);
+        $respuesta = DetallePedidoDao::pedidoM($code,$id,$precio,$cantidad,$total,$fechaP,$nombre,$lapPaymentMethod,$direccion);
     }
 
   }

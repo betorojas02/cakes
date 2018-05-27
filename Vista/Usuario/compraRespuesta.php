@@ -6,6 +6,7 @@ require_once "../../Controlador/DetallePedidoControlador.php";
 
  $id =  $_SESSION["usuario"]["id_usuario"];
  $nombre = $_SESSION["usuario"]["nombre"];
+ $direccion = $_SESSION["usuario"]["direccion"];
  $fechaP = date("d-m-Y");
  $lapPaymentMethod = $_REQUEST['lapPaymentMethod'];
 if(isset($_SESSION['cart'])){
@@ -18,7 +19,7 @@ foreach($item as $i){
     $cantidad = $i['amount'];
     $total = ($precio*$cantidad);
 
-     $datos = DetallePedidoControlador::pedidosC($code,$id,$precio,$cantidad,$total,$fechaP,$nombre,$lapPaymentMethod);
+     $datos = DetallePedidoControlador::pedidosC($code,$id,$precio,$cantidad,$total,$fechaP,$nombre,$lapPaymentMethod,$direccion);
 
 echo $datos;
 }
@@ -70,13 +71,14 @@ $_SESSION['cart']=NULL;
 
      <!--  script jquery  -->
      <script type="text/javascript" src="../asset/js/jquery-3.3.1.min.js"></script>
-      <!-- Compiled and minified JavaScript -->
+    <!-- Compiled and minified JavaScript -->
 
 
     <script type="text/javascript" src="../asset/js/materialize.min.js"></script>
-      <script type="text/javascript" src="../asset/dist/sweetalert.min.js"></script>
-        <!--  script funciones index -->
-    <script  src="../asset/js/index.js"></script>
+    <script type="text/javascript" src="../asset/dist/sweetalert.min.js"></script>
+    <!--  script funciones index -->
+    <script src="../asset/js/index.js"></script>
+
     <script type="text/javascript" src="../asset/js/registro.js"></script>
 </body>
 </html>

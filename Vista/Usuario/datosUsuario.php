@@ -18,6 +18,7 @@
 
   $id =  $_SESSION["usuario"]["id_usuario"];
 
+
   // $usu = new UsuarioControlador();
   $usuarios = UsuarioControlador::usuLC($id);
 
@@ -180,9 +181,9 @@
            $referenceCode=date("d-m-Y h:i:s");
            $amount=$cart->get_total_payment();
            $currency="COP";
-            $correo =  $_SESSION["usuario"]["correo"];
-          $ding = md5($key."~".$merchantId."~".$referenceCode."~".$amount."~".$currency);
-          $url = 'http://'.$_SERVER["SERVER_NAME"].'/cakes/vista/usuario/compraRespuesta.php';
+           $correo =  $_SESSION["usuario"]["correo"];        
+           $ding = md5($key."~".$merchantId."~".$referenceCode."~".$amount."~".$currency);
+           $url = 'http://'.$_SERVER["SERVER_NAME"].'/cakes/vista/usuario/compraRespuesta.php';
            ?>
               <form method="post" action="https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/">
                 <input name="merchantId" type="hidden" value="<?php echo $merchantId?>">
