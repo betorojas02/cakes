@@ -47,7 +47,7 @@ Class IngredienteDAO extends Conexion
     */
     public static function addIngrediente($ingrediente)
     {
-        $sql = "INSERT INTO ingrediente (nombre_ingrediente,precio,id_proveedor,cantidad) VALUES (:nombre,:precio,:prov,:cant)";
+        $sql = "INSERT INTO ingrediente (nombre_ingrediente,precio,id_proveedor,cantidad,estado) VALUES (:nombre,:precio,:prov,:cant,:esta)";
         self::getConexion();
 
         $sql2 = "SELECT * FROM ingrediente WHERE UPPER(nombre_ingrediente) LIKE UPPER(:nomb)";
@@ -66,11 +66,13 @@ Class IngredienteDAO extends Conexion
           $precio = $ingrediente->getPrecio();
           $prov = $ingrediente->getId_proveedor();
           $cantidad = $ingrediente->getCantidad();
+          $estado = $ingrediente->getEstado();
 
           $resultado->bindParam(":nombre", $nombre);
           $resultado->bindParam(":precio", $precio);
           $resultado->bindParam(":prov", $prov);
           $resultado->bindParam(":cant", $cantidad);
+          $resultado->bindParam(":esta", $estado);
 
            $resultado->execute();
 
@@ -88,7 +90,7 @@ Class IngredienteDAO extends Conexion
       $sql = "UPDATE ingrediente SET estado = :estado  where id_ingrediente = :id  ";
       self::getConexion();
 
-    
+
 
         $resultado = self::$cnx->prepare($sql);
 

@@ -53,7 +53,7 @@ else
            echo "<tr>";
            echo "<td style='padding:20px;'>"; echo "$filas[id_tipo]"; echo "</td>";
            echo "<td style='padding:20px;'>"; echo "$filas[nombre_tipo]"; echo "</td>";
-          echo "<td style='padding:20px;' > <a id='editT' data-toggle='modal' data-target='#editT' data-id='" .$filas['id_tipo'] ."' data-nombre='" .$filas['nombre_tipo'] ."' data-estado='" .$filas['estado']."' class='mdl-button mdl-js-button mdl-button--raised mdl-js-button mdl-button--accent mdl-color--pink-A100'>  Editar</a> </td>";
+          //echo "<td style='padding:20px;' > <a id='editT' data-toggle='modal' data-target='#editT' data-id='" .$filas['id_tipo'] ."' data-nombre='" .$filas['nombre_tipo'] ."' data-estado='" .$filas['estado']."' class='mdl-button mdl-js-button mdl-button--raised mdl-js-button mdl-button--accent mdl-color--pink-A100'>  Editar</a> </td>";
                   echo "<td style='padding:20px;' > <a class='btn btn-danger' href='eliminarC.php?i2=".$filas['id_tipo']."'> <button class='mdl-button show-modal mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-color--pink-A100'>Eliminar</button></a> </td>";
                   echo "</tr>";
                 }

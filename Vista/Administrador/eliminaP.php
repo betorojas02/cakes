@@ -1,5 +1,5 @@
 <?php
-include '../../Controlador/ProductoControlador.php';
+include '../../Controlador/ProductoControladoor.php';
    $id = $_GET['i2'];
 
 
