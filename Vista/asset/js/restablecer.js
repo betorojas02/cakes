@@ -32,7 +32,7 @@ $(document).on('submit', '#formR', function (event) {
 			$("#formR")[0].reset();
 
 		} else {
-			swal("Oops", "Correo no existe", "error");
+			swal('Lo sentimos, el correo no existe');
 		}
 
 	});

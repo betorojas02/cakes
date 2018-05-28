@@ -74,7 +74,7 @@ $ (document).on ('submit', '#form-item', function (event) {
           }
         );
       } else {
-        swal ('Oops', 'Correo ya existe', 'error');
+        swal ( 'Lo sentimos, el correo no existe');
       }
     });
   } //end if == "add"
@@ -125,7 +125,7 @@ $ (document).on ('submit', '#formE', function (event) {
       swal (
         {
           title: 'editar',
-          text: 'Exito editar',
+          text: 'Datos correctamente editados',
           type: 'success',
           button: 'cerrar',
         },

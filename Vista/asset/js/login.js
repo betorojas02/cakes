@@ -20,7 +20,7 @@ jQuery(document).on('submit', '#formlg', function (event) {
                     location.href = '../Usuario/index.php'
                 }
             } else {
-                swal("Oops", "Usuario o clave invalidos", "error");
+                swal('Lo sentimos, el usuario y clave son inválidos');
                 $('.btn').val('Login');
             }
         })
