@@ -34,7 +34,7 @@ else
                   <th style="padding:20px;">CANTIDAD</th>
                   <th style="padding:20px;">PROVEEDOR</th>
                   <th style="padding:20px;">   <button id="new" class='mdl-button show-modal  mdl-js-button mdl-button--raised mdl-button--accent mdl-color--pink-A100'><i class="material-icons">add</i> Nuevo Ingrediente</button>  <br><br> </th>
-                  <th style="padding:20px;"></th>
+                  <th style="padding:20px;">    <a class='btn btn-danger' class='editacion' id='editI' >  <button class='mdl-button show-modal mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-color--pink-A100'>  Editar </button> </a>
                 </tr>
               </thead>
 
@@ -51,7 +51,6 @@ else
                   echo "<td style='padding:20px;'>";  echo "$filas[precio]";  echo "</td>";
                   echo "<td style='padding:20px;'>";  echo "$filas[cantidad]";  echo "</td>";
                   echo "<td style='padding:20px;'>";  echo "$filas[nombre_empresa]";  echo "</td>";
-                  echo "<td style='padding:20px;' > <a class='btn btn-danger' class='editacion' id='editI'>  <button class='mdl-button show-modal mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-color--pink-A100'>  Editar </button> </a> </td>";
                   echo "<td style='padding:20px;' > <a class='btn btn-danger' href='eliminaI.php?i2=".$filas['id_ingrediente']."'> <button class='mdl-button show-modal mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-color--pink-A100'>Eliminar</button></a> </td>";
                   echo "</tr>";
                 }
@@ -114,53 +113,55 @@ else
  </dialog>
 
 
+ <dialog>
 
+  <div class="modal-dialog" id="editar" >
+  <div class="modal-content">
+  	 <div class="modal-header">
+  			 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  			 <h4>Editar Ingrediente</h4>
+  	 </div>
+  	 <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
+  			<form action="actualiza.php" method="POST">
 
-
-
-
-
-
-<dialog id="dialog" class="mdl-dialog">
-
- <div class="modal-dialog">
- <div class="modal-content">
- 	 <div class="modal-header">
- 			 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
- 			 <h4>Editar Ingrediente</h4>
- 	 </div>
- 	 <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
- 			<form action="actualiza.php" method="POST">
-
- 						<input  id="id" name="id" type="hidden" ></input>
+  						<input  id="id" name="id" type="hidden" ></input>
+  						 <div class="form-group">
+  							 <label for="nombre">Nombre:</label>
+  							 <input class="form-control" id="nombre" name="nombre" type="text" ></input>
+  						 </div>
+  						 <div class="form-group">
+  							 <label for="precio">Precio:</label>
+  							 <input class="form-control" id="cantidad" name="precio" type="text" ></input>
+  						 </div>
+  						 <div class="form-group">
+  							 <label for="cantidad">Cantidad:</label>
+  							 <input class="form-control" id="cantidad" name="cantidad" type="text" ></input>
+  						 </div>
  						 <div class="form-group">
- 							 <label for="nombre">Nombre:</label>
- 							 <input class="form-control" id="nombre" name="nombre" type="text" ></input>
- 						 </div>
- 						 <div class="form-group">
- 							 <label for="precio">Precio:</label>
- 							 <input class="form-control" id="cantidad" name="precio" type="text" ></input>
- 						 </div>
- 						 <div class="form-group">
- 							 <label for="cantidad">Cantidad:</label>
- 							 <input class="form-control" id="cantidad" name="cantidad" type="text" ></input>
- 						 </div>
-						 <div class="form-group">
-								<label for="proveedor">Proveedor:</label>
-								<input class="form-control" id="proveedor" name="proveedor" type="text" ></input>
-							</div>
+ 								<label for="proveedor">Proveedor:</label>
+ 								<input class="form-control" id="proveedor" name="proveedor" type="text" ></input>
+ 							</div>
 
-  <input type="submit" class="mdl-button mdl-js-button  btn-success">
- 			</form>
- 	 </div>
- 	 <div class="modal-footer">
- 			 <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
- 	 </div>
- </div>
- </div>
+   <input type="submit" class="mdl-button mdl-js-button  btn-success">
+  			</form>
+  	 </div>
+  	 <div class="modal-footer">
+  			 <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+  	 </div>
+  </div>
+  </div>
 
 
-</dialog>
+ <dialog>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -183,7 +184,7 @@ else
 
 						 	(function() {
 
-               var dialogButton = document.querySelector('.editacion');
+               var dialogButton = document.querySelector('#editar');
                var dialog = document.querySelector('#dialog');
                if (! dialog.showModal) {
                  dialogPolyfill.registerDialog(dialog);

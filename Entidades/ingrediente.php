@@ -7,7 +7,7 @@ class Ingrediente
   private $precio;
   private $id_proveedor;
   private $cantidad;
-	
+  private $estado;
 
   public function getId_ingrediente(){
 		return $this->id_ingrediente;
@@ -48,6 +48,15 @@ class Ingrediente
 	public function setCantidad($cantidad){
 		$this->cantidad = $cantidad;
 	}
+
+
+  public function getEstado(){
+    return $this->estado;
+  }
+
+  public function setEstado($estado){
+    $this->estado = $estado;
+  }
 
 
 }
