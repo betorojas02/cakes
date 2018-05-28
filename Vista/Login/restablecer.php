@@ -1,12 +1,13 @@
 <html>
 
 <head>
-<meta charset="utf-8">
+  <meta charset="utf-8">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="../asset/css/materialize.min.css">
   <link rel="stylesheet" type="text/css" href="../asset/dist/sweetalert.css">
   <link rel="stylesheet" href="../asset/css/login.css">
-	<link rel="stylesheet" type="text/css" href="../asset/pink/pace-theme-flash.css">
+  <link rel="stylesheet" href="../asset/css/index.css">
+  <link rel="stylesheet" type="text/css" href="../asset/pink/pace-theme-flash.css">
 </head>
 
 <body>
@@ -34,7 +35,7 @@
             <div class='row'>
               <div class='input-field col s12'>
                 <input class='validate' type='email' name='correo' id='correo' required />
-                <label >Ingresa tu correo</label>
+                <label>Ingresa tu correo</label>
               </div>
             </div>
             <center>
@@ -42,14 +43,14 @@
                 <!-- <input type="submit" name="btn_login" class="btn" value="login"> -->
 
                 <button type='submit' name='btn_login' class='col s12 btn btn-large waves-effect pink accent-1' id='btn' value="Login"> Enviar correo
-                 <i class="material-icons right">send</i>
-               </button>
+                  <i class="material-icons right">send</i>
+                </button>
               </div>
             </center>
           </form>
         </div>
       </div>
-      <a  class='pink-text' href="../Usuario/registrar.php">Crear Cuenta</a>
+      <a class='pink-text' href="../Usuario/registrar.php">Crear Cuenta</a>
     </center>
 
     <div class="section"></div>

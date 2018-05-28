@@ -20,6 +20,7 @@ $cedula= $_POST['cedula'];
 $fecha = $_POST['fecha'];
  $estado = $_POST['A'];
 
+
 $emailr = UsuarioControlador::usuarioRepetidoC($correo);
 
 
@@ -59,10 +60,66 @@ if($emailr > 0){
         //Content
         $mail->isHTML(true);                                  // Set email format to HTML
         $mail->Subject = 'Se ha registrado con exito en la pasteleria ';
-        $mail->Body .="<h1 style='color:#3498db;'Bienvenido!</h1>";
-        $mail->Body .= '<b> Bienvenido se registro con el correo </b>'.$correo;
-        $mail->Body .= "<p>Fecha y Hora: ".date("d-m-Y h:i:s")."</p>";
-        $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+        $mail->Body = "
+                        <!DOCTYPE html>
+                <html lang='en'>
+
+                <head>
+                    <meta charset='UTF-8'>
+                    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+                    <link rel='stylesheet' type='text/css' href='../asset/css/materialize.min.css'>
+                    <title>Document</title>
+                </head>
+
+                <body>
+
+                <div class='container'>
+                     <div class='row'>
+                             <div class='col s12'>
+                                      <div class='card-panel pink'>
+                                        <span class='white-text'> Se ha registrado CON EXITO en la pasteleria L&C CAKES
+                                     </div>
+                             </div>
+                     </div>
+                </div>
+
+                    <table class='centered' border='1px' cellpadding='5px' width='100%'>
+                        <thead>
+                            <tr>
+                                <th style='background-color: thistle' colspan='6'>LYB CAKES</th>
+                            </tr>
+                            <tr>
+                                
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Correo</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>".$nombre."</td>
+                                <td>".$apellido."</td>
+                                <td>".$correo."</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <script type='text/javascript' src='../asset/js/jquery-3.3.1.min.js'></script>
+                    <!-- Compiled and minified JavaScript -->
+
+
+                    <script type='text/javascript' src='../asset/js/materialize.min.js'></script>
+                </body>
+
+                </html>
+           
+ ";
+//         $mail->Body .="<h1 style='color:#3498db;'Bienvenido!</h1>";      
+//         $mail->Body .= '<b> Bienvenido se registro con el correo </b>'.$correo;
+//         $mail->Body .= "<p>Fecha y Hora: ".date("d-m-Y")."</p>";
+//         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
         $mail->send();
         // echo 'Message has been sent';

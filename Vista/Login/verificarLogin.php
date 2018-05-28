@@ -25,6 +25,7 @@ if($resultado_set)
       "nombre"     =>  $usuario->getNombre(),
       "correo"     =>  $usuario->getCorreo(),
       "estado"     =>  $usuario->getEstado(),
+      "direccion"     =>  $usuario->getDireccion(),
   );
   echo json_encode(array('error' => false , 'tipo' => $resultado_set['id_perfil']));
 }else{

@@ -184,6 +184,11 @@ nav ul li.link:hover {
   color: #d81b60;
 }
 
+#errorCantidad {
+  color: #ffffff;
+  background-color: #d81b60;
+}
+
 /* .video-responsive {
 position: relative;
 padding-bottom: 56.25%;

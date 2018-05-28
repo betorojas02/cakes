@@ -1,34 +1,34 @@
-$ (document).ready (function () {
-  $ ('.datepicker').datepicker ({
+$(document).ready(function () {
+  $('.datepicker').datepicker({
     format: 'dd/mm/yyyy',
   });
 });
 
 //ajax para registrar usuarios
 //ajax para registrar usuarios
-$ (document).on ('submit', '#form-item', function (event) {
-  event.preventDefault ();
+$(document).on('submit', '#form-item', function (event) {
+  event.preventDefault();
   /* Act on the event */
-  var nombre = $ ('#nombre').val ();
-  var apellido = $ ('#apellido').val ();
-  var correo = $ ('#correo').val ();
-  var clave = $ ('#clave').val ();
-  var ciudad = $ ('#ciudad').val ();
-  var telefono = $ ('#telefono').val ();
-  var sexo = $ ('input:radio[name=edad]:checked').val ();
-  var direccion = $ ('#direccion').val ();
-  var barrio = $ ('#barrio').val ();
-  var cedula = $ ('#cedula').val ();
-  var fecha = $ ('#fecha').val ();
+  var nombre = $('#nombre').val();
+  var apellido = $('#apellido').val();
+  var correo = $('#correo').val();
+  var clave = $('#clave').val();
+  var ciudad = $('#ciudad').val();
+  var telefono = $('#telefono').val();
+  var sexo = $('input:radio[name=edad]:checked').val();
+  var direccion = $('#direccion').val();
+  var barrio = $('#barrio').val();
+  var cedula = $('#cedula').val();
+  var fecha = $('#fecha').val();
   var estado = 'A';
 
   var tipoP = 2;
-  if ($ ('#submit-item').val () == 'add') {
+  if ($('#submit-item').val() == 'add') {
     // console.log('add ra');
-    $ (document).ajaxStart (function () {
-      Pace.restart ();
+    $(document).ajaxStart(function () {
+      Pace.restart();
     });
-    $.ajax ({
+    $.ajax({
       url: 'datosUsuarioRegistrar.php',
       type: 'POST',
       dataType: 'json',
@@ -58,12 +58,11 @@ $ (document).on ('submit', '#form-item', function (event) {
         cedula +
         '&fecha=' +
         fecha,
-    }).done (function (resp) {
-      console.log (resp);
+    }).done(function (resp) {
+      console.log(resp);
 
       if (!resp.error) {
-        swal (
-          {
+        swal({
             title: 'registar',
             text: 'Exito registrar',
             type: 'success',
@@ -74,56 +73,42 @@ $ (document).on ('submit', '#form-item', function (event) {
           }
         );
       } else {
-        swal ('Oops', 'Correo ya existe', 'error');
+        swal('Oops', 'Correo ya existe', 'error');
       }
     });
   } //end if == "add"
 });
 //ajax para aditar usuario
 
-$ (document).on ('submit', '#formE', function (event) {
-  event.preventDefault ();
+$(document).on('submit', '#formE', function (event) {
+  event.preventDefault();
   /* Act on the event */
-  var id_usuario = $ ('#id_usuario').val ();
-  var nombre = $ ('#nombre').val ();
-  var apellido = $ ('#apellido').val ();
-  var ciudad = $ ('#ciudad').val ();
-  var telefono = $ ('#telefono').val ();
-  //
-  var direccion = $ ('#direccion').val ();
-  var barrio = $ ('#barrio').val ();
-  var cedula = $ ('#cedula').val ();
-  if ($ ('#submit-item').val () == 'add') {
-    // console.log('add ra');
-    $.ajax ({
+  var id_usuario = $('#id_usuario').val();
+  var ciudad = $('#ciudad').val();
+  var telefono = $('#telefono').val();
+  var direccion = $('#direccion').val();
+  var barrio = $('#barrio').val();
+  console.log(id_usuario);
+  console.log(ciudad);
+  console.log(barrio);
+  console.log(telefono);
+  if ($('#submit-item').val() == 'add') {
+    // console.log('add ra');s
+    $.ajax({
       url: 'datosEditarUsuario.php',
       type: 'POST',
       dataType: 'json',
-      data: 'nombre=' +
-        nombre +
-        '&id_usuario=' +
-        id_usuario +
-        '&apellido=' +
-        apellido +
-        '&ciudad=' +
-        ciudad +
-        '&telefono=' +
-        telefono +
-        '&direccion=' +
-        direccion +
-        '&barrio=' +
-        barrio +
-        '&cedula=' +
-        cedula,
-    }).done (function (resp) {
-      console.log (resp);
-      console.error (resp);
+      data: 'id_usuario=' + id_usuario + '&ciudad=' + ciudad + '&telefono=' + telefono + '&direccion=' + direccion + '&barrio=' + barrio
 
-      $ ('#modal2').modal ({
+    }).done(function (resp) {
+      console.log(resp);
+      console.log(direccion);
+      console.error(resp);
+
+      $('#modal2').modal({
         complete: function () {}, // Callback for Modal close
       });
-      swal (
-        {
+      swal({
           title: 'editar',
           text: 'Exito editar',
           type: 'success',
