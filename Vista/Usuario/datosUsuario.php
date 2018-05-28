@@ -115,6 +115,9 @@ $usuarios = UsuarioControlador::usuLC($id);
             </div>
 
           </div>
+          <div id="carritoCompras">
+
+            <div class="row" id="datos">
 
 
               <table border="1px" cellpadding="5px" width="100%">
@@ -152,32 +155,31 @@ $usuarios = UsuarioControlador::usuLC($id);
                 </div>
               </div>
             </div>
-
-            <form method="post" action="https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/">
-  <input name="merchantId"    type="hidden"  value="508029"   >
-  <input name="accountId"     type="hidden"  value="512321" >
-  <input name="description"   type="hidden"  value="Test PAYU"  >
-  <input name="referenceCode" type="hidden"  value="TestPayU" >
-  <input name="amount"        type="hidden"  value="1000"   >
-  <input name="tax"           type="hidden"  value="3193"  >
-  <input name="taxReturnBase" type="hidden"  value="16806" >
-  <input name="currency"      type="hidden"  value="COP" >
-  <input name="signature"     type="hidden"  value="7e970e41a70bca6c23117f1fab2ee28e"  >
-  <input name="test"          type="hidden"  value="1" >
-  <input name="buyerEmail"    type="hidden"  value="test@test.com" >
-  <input name="responseUrl"    type="hidden"  value="http://www.test.com/response" >
-  <input name="confirmationUrl"    type="hidden"  value="http://www.test.com/confirmation" >
-  <input name="Submit"        type="submit"  value="Enviar" >
-
-
-                <!-- Producto -->
-
-            </div>
           </div>
 
+          <form method="post" action="https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/">
+            <input name="merchantId" type="hidden" value="508029">
+            <input name="accountId" type="hidden" value="512321">
+            <input name="description" type="hidden" value="Test PAYU">
+            <input name="referenceCode" type="hidden" value="TestPayU">
+            <input name="amount" type="hidden" value="1000">
+            <input name="tax" type="hidden" value="3193">
+            <input name="taxReturnBase" type="hidden" value="16806">
+            <input name="currency" type="hidden" value="COP">
+            <input name="signature" type="hidden" value="7e970e41a70bca6c23117f1fab2ee28e">
+            <input name="test" type="hidden" value="1">
+            <input name="buyerEmail" type="hidden" value="test@test.com">
+            <input name="responseUrl" type="hidden" value="http://www.test.com/response">
+            <input name="confirmationUrl" type="hidden" value="http://www.test.com/confirmation">
+            <input name="Submit" type="submit" value="Enviar">
 
 
-          <!-- ciere row -->
+            <!-- Producto -->
+
+
+
+
+            <!-- ciere row -->
         </div>
 
         <!-- cierra de container principal -->
@@ -194,7 +196,8 @@ $usuarios = UsuarioControlador::usuLC($id);
             <label>
               <h4>Editar Cuenta:</h4>
             </label>
-            <input disabled type="text" name="id_usuario" id="id_usuario" style="display:none" required value="<?php echo $_SESSION["usuario"]["id_usuario"]; ?>  ">
+            <input disabled type="text" name="id_usuario" id="id_usuario" style="display:none" required value="<?php echo $_SESSION["
+              usuario "]["id_usuario "]; ?>  ">
             <div class="input-field col s6 m6 l6">
               <label>Ciudad</label>
               <input class="validate" type="text" name="ciudad" id="ciudad" pattern="[a-z]{1,15}" required value="<?php echo $usua['ciudad']; ?>">
