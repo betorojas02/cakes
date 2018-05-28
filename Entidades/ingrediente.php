@@ -7,6 +7,7 @@ class Ingrediente
   private $precio;
   private $id_proveedor;
   private $cantidad;
+	
 
   public function getId_ingrediente(){
 		return $this->id_ingrediente;

@@ -1,28 +1,26 @@
 <?php
-   require_once "../../Controlador/UsuarioControlador.php";
-   require_once "../../include/session.php"; 
-   require_once "../../Controlador/cartControlador.php";
+require_once "../../Controlador/UsuarioControlador.php";
+require_once "../../include/session.php";
+require_once "../../Controlador/cartControlador.php";
 
-   $cart = new Cart();
-   if(isset($_GET['action'])){
-     switch ($_GET['action']){
-       case 'add':
-         $cart->add_item($_GET['code'], $_GET['amount']);
-       break;
-       case 'remove':
-         $cart->remove_item($_GET['code']);
-       break;
-     }
-   }
+$cart = new Cart();
+if (isset($_GET['action'])) {
+    switch ($_GET['action']) {
+        case 'add':
+            $cart->add_item($_GET['code'], $_GET['amount']);
+            break;
+        case 'remove':
+            $cart->remove_item($_GET['code']);
+            break;
+    }
+}
 
+$id = $_SESSION["usuario"]["id_usuario"];
 
-  $id =  $_SESSION["usuario"]["id_usuario"];
+// $usu = new UsuarioControlador();
+$usuarios = UsuarioControlador::usuLC($id);
 
-
-  // $usu = new UsuarioControlador();
-  $usuarios = UsuarioControlador::usuLC($id);
-
-  ?>
+?>
   <!DOCTYPE html>
   <html lang="en">
 
@@ -46,10 +44,10 @@
   <body>
 
     <header>
-      <?php include("navbar/navbarUsuario.php"); ?>
+      <?php include "navbar/navbarUsuario.php";?>
       <!--  terminaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-->
     </header>
-    <?php foreach ($usuarios as $usua):?>
+    <?php foreach ($usuarios as $usua): ?>
     <main>
       <div class="container">
         <div class="row">
@@ -119,7 +117,7 @@
           <div id="comprasU">
 
             <div class="row" id="datos">
-              <?php  include("miscompras.php") ?>
+              <?php include "miscompras.php"?>
 
 
             </div>
@@ -166,43 +164,22 @@
                 </div>
               </div>
             </div>
-            <?php 
- if(!empty($_SESSION['cart'])){
 
-   ?>
-
-
-
-            <div class="row">
-              <?php 
-          $key ="4Vj8eK4rloUd272L48hsrarnUA";
-          $merchantId=508029;
-           $accountId=512321;
-           $referenceCode=date("d-m-Y h:i:s");
-           $amount=$cart->get_total_payment();
-           $currency="COP";
-           $correo =  $_SESSION["usuario"]["correo"];        
-           $ding = md5($key."~".$merchantId."~".$referenceCode."~".$amount."~".$currency);
-           $url = 'http://'.$_SERVER["SERVER_NAME"].'/cakes/vista/usuario/compraRespuesta.php';
-           ?>
-              <form method="post" action="https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu">
-                <input name="merchantId" type="hidden" value="<?php echo $merchantId?>">
-                <input name="accountId" type="hidden" value="<?php  echo $accountId?>">
-                <input name="description" type="hidden" value="VENTASCAKES">
-                <input name="referenceCode" type="hidden" value="<?php echo $referenceCode?>">
-                <input name="amount" type="hidden" value="<?php echo $amount?>">
-                <input name="tax" type="hidden" value="" <input name="taxReturnBase" type="hidden" value="2">
-                <input name="currency" type="hidden" value="<?php echo $currency?>">
-                <input name="signature" type="hidden" value="<?php  echo $ding ?>">
-                <input name="test" type="hidden" value="1">
-                <input name="buyerEmail" type="hidden" value="<?php echo $correo?>">
-                <input name="responseUrl" type="hidden" value="<?php echo $url ?>">
-                <!-- <input name="confirmationUrl"    type="hidden"  value="http://www.test.com/confirmation" >  -->
-                <button class="btn waves-effect waves-light pink pulse" name="Submit" type="submit" value="Realizar Compra"> Realizar Compra</button>
-              </form>
-              <?php
-  }
-  ?>
+            <form method="post" action="https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/">
+  <input name="merchantId"    type="hidden"  value="508029"   >
+  <input name="accountId"     type="hidden"  value="512321" >
+  <input name="description"   type="hidden"  value="Test PAYU"  >
+  <input name="referenceCode" type="hidden"  value="TestPayU" >
+  <input name="amount"        type="hidden"  value="1000"   >
+  <input name="tax"           type="hidden"  value="3193"  >
+  <input name="taxReturnBase" type="hidden"  value="16806" >
+  <input name="currency"      type="hidden"  value="COP" >
+  <input name="signature"     type="hidden"  value="7e970e41a70bca6c23117f1fab2ee28e"  >
+  <input name="test"          type="hidden"  value="1" >
+  <input name="buyerEmail"    type="hidden"  value="test@test.com" >
+  <input name="responseUrl"    type="hidden"  value="http://www.test.com/response" >
+  <input name="confirmationUrl"    type="hidden"  value="http://www.test.com/confirmation" >
+  <input name="Submit"        type="submit"  value="Enviar" >
 
 
                 <!-- Producto -->
@@ -219,7 +196,7 @@
       </div>
     </main>
     <footer class="page-footer" id="footerContainer">
-      <?php include("navbar/footer.php"); ?>
+      <?php include "navbar/footer.php";?>
     </footer>
     <div id="modal2" class="modal fixed-footer trans-card z-depth-4">
       <div class="modal-content trans-card col s12 ">
@@ -229,7 +206,7 @@
             <label>
               <h4>Editar Cuenta:</h4>
             </label>
-            <input disabled type="text" name="id_usuario" id="id_usuario" style="display:none" required value="<?php echo $_SESSION["usuario"]["id_usuario"];?>  ">
+            <input disabled type="text" name="id_usuario" id="id_usuario" style="display:none" required value="<?php echo $_SESSION["usuario"]["id_usuario"]; ?>  ">
             <div class="input-field col s6 m6 l6">
               <label>Ciudad</label>
               <input class="validate" type="text" name="ciudad" id="ciudad" pattern="[a-z]{1,15}" required value="<?php echo $usua['ciudad']; ?>">
@@ -265,7 +242,7 @@
     </div>
 
 
-    <?php  endforeach ?>
+    <?php endforeach?>
 
 
 
@@ -279,7 +256,7 @@
     <script type="text/javascript" src="../asset/dist/sweetalert.min.js"></script>
     <!--  script funciones index -->
     <script src="../asset/js/index.js"></script>
-    
+
     <script type="text/javascript" src="../asset/js/registro.js"></script>
 
     <script type="text/javascript" src="../asset/js/pace.min.js"></script>
