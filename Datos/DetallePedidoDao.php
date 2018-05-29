@@ -15,7 +15,12 @@ class DetallePedidoDao extends Conexion
     {
         self::$cnx = null;
     }
-
+    /**
+     * metodo para saber el pedido de o el detallepedido de un cliente
+     *
+     * @param [type] $id
+     * @return void
+     */
     public static function detallePedidoM($id)
     {
         $sql = "SELECT p.nombre , d.cantidad, d.precio_total, d.precio_unidad FROM producto p , detallepedido d   , pedido pe
@@ -39,7 +44,20 @@ class DetallePedidoDao extends Conexion
         return false;
 
     }
-
+    /**
+     * metodo para hacer la insercion de un pedido
+     *
+     * @param [type] $code
+     * @param [type] $id
+     * @param [type] $precio
+     * @param [type] $cantidad
+     * @param [type] $total
+     * @param [type] $fechaP
+     * @param [type] $nombre
+     * @param [type] $lapPaymentMethod
+     * @param [type] $direccion
+     * @return void
+     */
     public static function pedidoM($code, $id, $precio, $cantidad, $total, $fechaP, $nombre, $lapPaymentMethod, $direccion)
     {
 
