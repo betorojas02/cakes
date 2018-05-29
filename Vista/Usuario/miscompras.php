@@ -51,30 +51,7 @@
     <div class="row">
                 <div class="center">
                   <div class="card-panel  pink darken-1" id="np">
-<?php    
-if(isset($_SESSION['cart'])){
 
-$item = $_SESSION['cart'];
-foreach($item as $i){
-$datos =$i['code'];
-
-
-
-
-echo $datos;
-}
-}else{
-  echo "no esta";
-}
-// $hola= "asd";
-// $peso = 124;
-// $clave =md5($hola.$peso);
-// echo $peso; 
-
-
-
-
-?>
 
                   No Hay Compras Disponibles
                   </div>
