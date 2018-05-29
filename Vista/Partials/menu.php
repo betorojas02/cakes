@@ -49,8 +49,8 @@
       <a class="mdl-navigation__link mdl-color-text--brown-800" href="categoriaa.php"><i class="mdl-color-text--brown-800 material-icons" role="presentation">restaurant_menu</i>Categorias</a>
       <a class="mdl-navigation__link mdl-color-text--brown-800" href="perfil.php"><i class="mdl-color-text--brown-800 material-icons" role="presentation">people</i>Perfiles</a>
       <a class="mdl-navigation__link mdl-color-text--brown-800" href="proveedor.php"><i class="mdl-color-text--brown-800 material-icons" role="presentation">contact_phone</i>Proveedores</a>
-      <a class="mdl-navigation__link mdl-color-text--brown-800" href="medida.php"><i class="mdl-color-text--brown-800 material-icons" role="presentation">contact_phone</i>Unidad de medida</a>
-      <a class="mdl-navigation__link mdl-color-text--brown-800" href="recetas.php"><i class="mdl-color-text--brown-800 material-icons" role="presentation">contact_phone</i>Recetas</a>
+      <a class="mdl-navigation__link mdl-color-text--brown-800" href="medida.php"><i class="mdl-color-text--brown-800 material-icons" role="presentation">poll</i>Unidad de medida</a>
+      <a class="mdl-navigation__link mdl-color-text--brown-800" href="recetas.php"><i class="mdl-color-text--brown-800 material-icons" role="presentation">kitchen</i>Recetas</a>
       <div class="mdl-layout-spacer"></div>
       <a class="mdl-navigation__link" href=""><i class="mdl-color-text--brown-800 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
     </nav>
