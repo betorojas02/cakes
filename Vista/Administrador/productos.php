@@ -33,9 +33,9 @@ else
                   <th style="padding:20px;">DESCRIPCIÓN</th>
                   <th style="padding:20px;">PRECIO</th>
                   <th style="padding:20px;">ESTADO</th>
-                  <th style="padding:20px;">CALIFICACIÓN</th>
+
                   <th style="padding:20px;">IMAGEN</th>
-                  <th style="padding:20px;">VOTOS</th>
+
                   <th style="padding:20px;">  <button id="new" class='mdl-button show-modal  mdl-js-button mdl-button--raised mdl-button--accent mdl-color--pink-A100'><i class="material-icons">add</i> Nuevo Producto</button>  <br><br> </th>
                   <th style="padding:20px;"></th>
               </thead>
@@ -57,10 +57,10 @@ else
                   echo "<td style
 
                   ='padding:20px;'>";  echo "$filas[estado]";  echo "</td>";
-                  echo "<td style='padding:20px;'>";  echo "$filas[calificacion]";  echo "</td>";
+
                   echo "<td style='padding:20px;'>";  echo "<img src='".$filas['imagen']."'  width='100px' heigth='200px'>";  echo "</td>";
-                  echo "<td style='padding:20px;'>";  echo "$filas[votos]";  echo "</td>";
-                  echo "<td style='padding:20px;' > <a id='editI' data-toggle='modal' data-target='#dialog' class='mdl-button mdl-js-button mdl-button--raised mdl-js-button mdl-button--accent mdl-color--pink-A100'>Editar</a> </td>";
+
+                  //echo "<td style='padding:20px;' > <a id='editI' data-toggle='modal' data-target='#dialog' class='mdl-button mdl-js-button mdl-button--raised mdl-js-button mdl-button--accent mdl-color--pink-A100'>Editar</a> </td>";
                   //echo "<td style='padding:20px;' > <span class='glyphicon glyphicon-pencil'></span>  <button id='ed' class='mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-color--pink-A100'>Editar</button></a> </td>";
                   echo "<td style='padding:20px;' > <a class='btn btn-danger' href='eliminaP.php?i2=".$filas['id_producto']."'> <button class='mdl-button show-modal mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-color--pink-A100'>Eliminar</button></a> </td>";
                   echo "</tr>";

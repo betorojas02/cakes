@@ -28,13 +28,13 @@ else
             <table class="striped"  style="text-align: left; width:100%; border-collapse:collapse;">
               <thead style="background-color: #FCE4EC; color:#4E342E; border-bottom:solid 5px #F50057; ">
                 <tr >
-                  <th style="padding:20px;">ID_IGREDIENTE</th>
+
                   <th style="padding:20px;">NOMBRE</th>
                   <th style="padding:20px;">PRECIO</th>
                   <th style="padding:20px;">CANTIDAD</th>
                   <th style="padding:20px;">PROVEEDOR</th>
                   <th style="padding:20px;">   <button id="new" class='mdl-button show-modal  mdl-js-button mdl-button--raised mdl-button--accent mdl-color--pink-A100'><i class="material-icons">add</i> Nuevo Ingrediente</button>  <br><br> </th>
-                  <th style="padding:20px;">    <a class='btn btn-danger' class='editacion' id='editI' >  <button class='mdl-button show-modal mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-color--pink-A100'>  Editar </button> </a>
+                  <th style="padding:20px;">
                 </tr>
               </thead>
 
@@ -46,7 +46,7 @@ else
                 While ($filas =  $resultado->fetch())
                 {
                   echo "<tr>";
-                  echo "<td style='padding:20px;'>";  echo "$filas[id_ingrediente]";  echo "</td>";
+                
                   echo "<td style='padding:20px;'>";  echo "$filas[nombre_ingrediente]";  echo "</td>";
                   echo "<td style='padding:20px;'>";  echo "$filas[precio]";  echo "</td>";
                   echo "<td style='padding:20px;'>";  echo "$filas[cantidad]";  echo "</td>";
@@ -113,46 +113,7 @@ else
  </dialog>
 
 
- <dialog>
 
-  <div class="modal-dialog" id="editar" >
-  <div class="modal-content">
-  	 <div class="modal-header">
-  			 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-  			 <h4>Editar Ingrediente</h4>
-  	 </div>
-  	 <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
-  			<form action="actualiza.php" method="POST">
-
-  						<input  id="id" name="id" type="hidden" ></input>
-  						 <div class="form-group">
-  							 <label for="nombre">Nombre:</label>
-  							 <input class="form-control" id="nombre" name="nombre" type="text" ></input>
-  						 </div>
-  						 <div class="form-group">
-  							 <label for="precio">Precio:</label>
-  							 <input class="form-control" id="cantidad" name="precio" type="text" ></input>
-  						 </div>
-  						 <div class="form-group">
-  							 <label for="cantidad">Cantidad:</label>
-  							 <input class="form-control" id="cantidad" name="cantidad" type="text" ></input>
-  						 </div>
- 						 <div class="form-group">
- 								<label for="proveedor">Proveedor:</label>
- 								<input class="form-control" id="proveedor" name="proveedor" type="text" ></input>
- 							</div>
-
-   <input type="submit" class="mdl-button mdl-js-button  btn-success">
-  			</form>
-  	 </div>
-  	 <div class="modal-footer">
-  			 <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
-  	 </div>
-  </div>
-  </div>
-
-
- <dialog>
 
 
 
@@ -182,22 +143,7 @@ else
              });
 
 
-						 	(function() {
 
-               var dialogButton = document.querySelector('#editar');
-               var dialog = document.querySelector('#dialog');
-               if (! dialog.showModal) {
-                 dialogPolyfill.registerDialog(dialog);
-               }
-               document.querySelector('.editacion').addEventListener('click', function() {
-                 dialog.showModal();
-    			 		 });
-    					dialog.querySelector('button:not([disabled])')
-    					.addEventListener('click', function() {
-      				dialog.close();
-    					});
-
-  					}());
 
            </script>
 

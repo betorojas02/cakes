@@ -1,5 +1,5 @@
 <?php
-include '../../Controlador/ProductoControlador.php';
+include '../../Controlador/ProductoControladoor.php';
 
 $nombre = $_POST["nombre"];
 $descripcion = $_POST["descripcion"];

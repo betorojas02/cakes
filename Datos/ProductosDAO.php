@@ -45,8 +45,8 @@ class ProductosDAO extends Conexion
     */
     public static function addProductos($producto)
     {
-        $sql = "INSERT INTO producto (descripcion,nombre,precio,estado,calificacion,id_tipo,votos,imagen)
-        VALUES (:descripcion,:nombre,:precio,:estado,:calificacion,:id_tipo,:votos,:imagen)";
+        $sql = "INSERT INTO producto (descripcion,nombre,precio,estado,id_tipo,imagen)
+        VALUES (:descripcion,:nombre,:precio,:estado,:id_tipo,:imagen)";
         self::getConexion();
 
         $sql2 = "SELECT * FROM producto WHERE UPPER(nombre) LIKE UPPER(:nomb)";
@@ -72,9 +72,7 @@ class ProductosDAO extends Conexion
           $resultado->bindParam(":nombre", $nombre);
           $resultado->bindParam(":precio", $precio);
           $resultado->bindParam(":estado", $estado);
-          $resultado->bindParam(":calificacion", $calificacion);
           $resultado->bindParam(":id_tipo", $tipo);
-          $resultado->bindParam(":votos", $votos);
           $resultado->bindParam(":imagen", $imagen);
 
            $resultado->execute();

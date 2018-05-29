@@ -18,6 +18,8 @@ include '../../Datos/IngredienteDAO.php';
           $obj_ingre->setPrecio($precio);
           $obj_ingre->setId_proveedor($proveedor);
           $obj_ingre->setCantidad($cantidad);
+          $obj_ingre->setEstado("A");
+
 
           $respuesta = IngredienteDAO::addIngrediente($obj_ingre);
 

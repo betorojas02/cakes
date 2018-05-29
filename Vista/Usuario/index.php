@@ -64,7 +64,7 @@ session_start();
 
     <?php if($totalP> 0){?>
       <?php
-    
+
       foreach ($productos as $pro):
         // code..
        ?>
@@ -72,7 +72,7 @@ session_start();
 
         <div class="card">
           <div class="card-image waves-effect waves-block waves-light">
-            <img  class="activator" src="<?php echo $pro['imagen']; ?>">
+            <img  class="activator" src="<?php echo $pro['imagen']; ?>" >
           </div>
               <!-- <a class="add-btn-flt btn btn-floating pink darken-1">
                 <i class="material-icons ">add</i>
@@ -86,7 +86,7 @@ session_start();
 						<label>Cantidad</label>
 						<input  class="validate" type="number"  id="<?PHP echo $code ?>" value="1"  min="1"  >
 					</div>
-          
+
           <a class="waves-effect waves-light btn pink darken-1"   onClick="addProduct(<?PHP echo $code ?>);">Agregar Carrito</a>
             <!-- <p><a href="datosUsuario.php#carritoCompras" id="linkCarritoProducto"><h5>Agregar al carrito</h5></a></p> -->
           </div>
@@ -99,7 +99,7 @@ session_start();
           </div>
         </div>
       </div>
-      
+
     <?php endforeach ?>
     <?php }else{ ?>
               <div>
@@ -107,10 +107,10 @@ session_start();
                   <div class="card-panel  pink darken-1" id="np">
                    No Hay Productos Disponibles
                   </div>
-                </div>  
+                </div>
               </div>
-         
-            
+
+
 
 
             <?php
