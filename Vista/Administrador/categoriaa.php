@@ -45,7 +45,7 @@ else
         </thead>
 
       <?php
-        include '../../Controlador/IngreControlador.php';
+         require_once '../../Controlador/ProductoControladoor.php';
          include '../../Controlador/TipoControlador.php';
          $resultado = TipoControlador::getTipo();
          while($filas = $resultado->fetch())
