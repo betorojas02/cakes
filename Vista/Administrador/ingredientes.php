@@ -39,6 +39,7 @@ else
               </thead>
 
               <?php
+							 require_once '../../Controlador/ProductoControladoor.php';
                 include '../../Controlador/IngreControlador.php';
 
                 $resultado = IngreControlador::getDatos();
@@ -46,7 +47,7 @@ else
                 While ($filas =  $resultado->fetch())
                 {
                   echo "<tr>";
-                
+
                   echo "<td style='padding:20px;'>";  echo "$filas[nombre_ingrediente]";  echo "</td>";
                   echo "<td style='padding:20px;'>";  echo "$filas[precio]";  echo "</td>";
                   echo "<td style='padding:20px;'>";  echo "$filas[cantidad]";  echo "</td>";

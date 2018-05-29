@@ -1,5 +1,5 @@
 <?php
-include 'Conexion.php';
+
 include '../../Entidades/ingrediente.php';
 
 Class IngredienteDAO extends Conexion
