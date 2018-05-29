@@ -63,7 +63,7 @@ $(document).on('submit', '#form-item', function (event) {
 
       if (!resp.error) {
         swal({
-            title: 'registar',
+            title: 'Registar',
             text: 'Exito registrar',
             type: 'success',
             button: 'cerrar',
@@ -73,7 +73,7 @@ $(document).on('submit', '#form-item', function (event) {
           }
         );
       } else {
-        swal('Oops', 'Correo ya existe', 'error');
+        swal('Error', 'Correo ya existe', 'error');
       }
     });
   } //end if == "add"
@@ -109,7 +109,7 @@ $(document).on('submit', '#formE', function (event) {
         complete: function () {}, // Callback for Modal close
       });
       swal({
-          title: 'editar',
+          title: 'Editar',
           text: 'Exito editar',
           type: 'success',
           button: 'cerrar',
