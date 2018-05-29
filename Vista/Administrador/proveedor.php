@@ -45,6 +45,7 @@ else
         </thead>
 
       <?php
+       require_once '../../Controlador/ProductoControladoor.php';
         include '../../Controlador/IngreControlador.php';
          include '../../Controlador/ProvControlador.php';
          $resultado = ProvControlador::getProveedores();
